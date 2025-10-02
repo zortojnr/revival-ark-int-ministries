@@ -1,0 +1,13 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#50C878;stop-opacity:0.1" />
+      <stop offset="100%" style="stop-color:#22c55e;stop-opacity:0.2" />
+    </linearGradient>
+  </defs>
+  <rect width="200" height="200" fill="url(#bg)" rx="20"/>
+  <circle cx="100" cy="80" r="30" fill="#15803d" opacity="0.8"/>
+  <path d="M70 130 Q100 110 130 130 L130 160 Q100 150 70 160 Z" fill="#15803d" opacity="0.8"/>
+  <rect x="90" y="70" width="20" height="15" fill="none" stroke="#15803d" stroke-width="2" opacity="0.6" rx="2"/>
+  <text x="100" y="185" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#15803d" font-weight="bold">Education Director</text>
+</svg>
