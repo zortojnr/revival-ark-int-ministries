@@ -6,7 +6,7 @@ export default function EvangelismMissionsPage() {
         
         <p className="text-lg text-secondary-700 mb-6">
           Our Evangelism & Missions ministry is committed to sharing the Gospel both locally and globally. 
-          We believe in the Great Commission and actively work to spread God's love to all nations.
+          We believe in the Great Commission and actively work to spread God&apos;s love to all nations.
         </p>
 
         <div className="space-y-8">
@@ -20,7 +20,7 @@ export default function EvangelismMissionsPage() {
 
           <div>
             <h2 className="text-2xl font-semibold text-secondary-900 mb-4">Global Missions</h2>
-            <p className="text-secondary-700">
+            <p className="text-secondary-700 leading-relaxed">
               Through partnerships with missionaries worldwide, we support church planting, 
               humanitarian aid, and Gospel outreach in various countries across the globe.
             </p>

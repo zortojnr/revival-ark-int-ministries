@@ -78,7 +78,7 @@ export default function ImpactSection() {
     const interval = setInterval(() => {
       setCurrentTestimony((prev) => (prev + 1) % testimonies.length);
     }, 5000);
-
+  
     return () => clearInterval(interval);
   }, []);
 
@@ -177,7 +177,7 @@ export default function ImpactSection() {
             Our Impact Across <span className="text-white font-bold">Nations</span>
           </h2>
           <p className="body-large max-w-4xl mx-auto">
-            By God's grace, Revival Ark International Ministries continues to touch lives, 
+            By God&apos;s grace, Revival Ark International Ministries continues to touch lives, 
             transform communities, and advance the Kingdom of God across the globe.
           </p>
         </motion.div>
@@ -187,7 +187,7 @@ export default function ImpactSection() {
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 mb-16 sm:mb-20"
           variants={containerVariants}
         >
-          {impactStats.map((stat, index) => {
+          {impactStats.map((stat) => {
             const IconComponent = stat.icon;
             const animatedValue = animatedStats[stat.id] || 0;
             
@@ -243,7 +243,7 @@ export default function ImpactSection() {
               Lives <span className="text-white font-bold">Transformed</span>
             </h3>
             <p className="body-large text-white font-semibold max-w-3xl mx-auto">
-              Hear from those whose lives have been touched by God's love through our ministry.
+              Hear from those whose lives have been touched by God&apos;s love through our ministry.
             </p>
           </div>
 
@@ -256,7 +256,7 @@ export default function ImpactSection() {
                 animate={{ x: -currentTestimony * 100 + '%' }}
                 transition={{ duration: 0.5, ease: "easeInOut" }}
               >
-                {testimonies.map((testimony, index) => (
+                {testimonies.map((testimony) => (
                   <div key={testimony.id} className="w-full flex-shrink-0">
                     <motion.div 
                       className="rounded-2xl p-8 lg:p-12 shadow-lg mx-4 border border-white/30"
@@ -274,9 +274,9 @@ export default function ImpactSection() {
                         </div>
                         <div className="flex-1 text-center lg:text-left">
                           <blockquote className="body-large mb-6 italic relative text-white font-semibold">
-                            <span className="text-4xl text-white absolute -top-2 -left-2">"</span>
+                            <span className="text-4xl text-white absolute -top-2 -left-2">&quot;</span>
                             {testimony.testimony}
-                            <span className="text-4xl text-white absolute -bottom-4 -right-2">"</span>
+                            <span className="text-4xl text-white absolute -bottom-4 -right-2">&quot;</span>
                           </blockquote>
                           <div className="flex items-center justify-center lg:justify-start space-x-2">
                             <div>

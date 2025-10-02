@@ -8,6 +8,8 @@ import {
   EnvelopeIcon,
   HeartIcon 
 } from '@heroicons/react/24/outline';
+import Image from 'next/image';
+import logoImage from '../../../images/logo.jpg';
 
 const footerNavigation = {
   about: [
@@ -84,8 +86,8 @@ export default function Footer() {
       alert('🎉 Thank you for subscribing to our newsletter! You\'ll receive updates about our ministry, upcoming events, and prayer requests.');
       
       // Track subscription event if analytics is enabled
-      if (typeof window !== 'undefined' && (window as any).gtag) {
-        (window as any).gtag('event', 'newsletter_subscription', {
+      if (typeof window !== 'undefined' && (window as { gtag?: (...args: unknown[]) => void }).gtag) {
+        (window as { gtag: (...args: unknown[]) => void }).gtag('event', 'newsletter_subscription', {
           event_category: 'engagement',
           event_label: 'footer_form'
         });
@@ -112,8 +114,16 @@ export default function Footer() {
           {/* Organization Info */}
           <div className="lg:col-span-1">
             <div className="flex items-center space-x-3 mb-6">
-              <div className="w-12 h-12 bg-gradient-to-r from-primary-500 to-primary-600 rounded-full flex items-center justify-center shadow-lg">
-                <span className="text-white font-bold text-xl">RA</span>
+              <div className="w-12 h-12 rounded-full overflow-hidden ring-2 ring-primary-500 ring-offset-2 ring-offset-neutral-800 shadow-lg">
+                <Image
+                  src={logoImage}
+                  alt="Revival Ark International Ministries Logo"
+                  width={48}
+                  height={48}
+                  quality={100}
+                  className="object-cover object-center"
+                  priority
+                />
               </div>
               <div>
                 <h3 className="font-heading text-lg font-bold text-white">
@@ -124,8 +134,8 @@ export default function Footer() {
             </div>
             
             <p className="font-body text-neutral-100 mb-6 leading-relaxed">
-              "An Ark of Revival to the Nations" - Bringing hope, healing, and transformation 
-              through the power of God's love and the Gospel of Jesus Christ.
+              &quot;An Ark of Revival to the Nations&quot; - Bringing hope, healing, and transformation 
+              through the power of God&apos;s love and the Gospel of Jesus Christ.
             </p>
 
             {/* Contact Information */}
@@ -142,12 +152,12 @@ export default function Footer() {
               
               <div className="flex items-center space-x-3">
                 <PhoneIcon className="h-5 w-5 text-primary-400 flex-shrink-0" />
-                <p className="font-body text-neutral-100 text-sm">+234 (0) 123 456 7890</p>
+                <p className="font-body text-neutral-100 text-sm">+234 814 746 5067</p>
               </div>
               
               <div className="flex items-center space-x-3">
                 <EnvelopeIcon className="h-5 w-5 text-primary-400 flex-shrink-0" />
-                <p className="font-body text-neutral-100 text-sm">revivalarkint'lministry@gmail.com</p>
+                <p className="font-body text-neutral-100 text-sm">revivalarkint&apos;lministry@gmail.com</p>
               </div>
             </div>
           </div>
@@ -207,7 +217,7 @@ export default function Footer() {
                 <button
                   type="submit"
                   disabled={isSubscribing}
-                  className="w-full bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-600 hover:to-primary-700 text-white px-4 py-2 rounded-md font-medium transition-all duration-200 disabled:opacity-50 shadow-lg"
+                  className="w-full bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-600 hover:to-primary-700 text-white px-4 py-2 rounded-md font-semibold transition-all duration-200 disabled:opacity-50 shadow-xl drop-shadow-lg hover:shadow-2xl transform hover:scale-[1.02] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-300"
                 >
                   {isSubscribing ? 'Subscribing...' : 'Subscribe'}
                 </button>

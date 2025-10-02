@@ -19,7 +19,7 @@ export default function LeadershipPage() {
       bio: 'Called by God with a heart for revival and the nations. Pastor [Name] has been in ministry for over [X] years, with a passion for seeing souls saved and believers equipped for kingdom service.',
       specialties: ['Evangelism', 'Church Planting', 'Leadership Development'],
       email: 'revivalarkint\'lministry@gmail.com',
-      phone: '+234-803-456-7890'
+      phone: '+234 814 746 5067'
     },
     {
       name: 'Pastor [Name]',
@@ -28,7 +28,7 @@ export default function LeadershipPage() {
       bio: 'A gifted teacher and shepherd with a heart for discipleship and spiritual growth. Pastor [Name] oversees our teaching ministries and pastoral care.',
       specialties: ['Teaching', 'Pastoral Care', 'Discipleship'],
       email: 'revivalarkint\'lministry@gmail.com',
-      phone: '+234-805-123-4567'
+      phone: '+234 814 746 5067'
     }
   ];
 
@@ -113,8 +113,8 @@ export default function LeadershipPage() {
               Our Leadership
             </h1>
             <p className="text-xl lg:text-2xl text-primary-100 leading-relaxed font-serif italic mb-8 max-w-3xl mx-auto">
-              "And he gave some, apostles; and some, prophets; and some, evangelists; 
-              and some, pastors and teachers; For the perfecting of the saints..." - Ephesians 4:11-12
+              &quot;And he gave some, apostles; and some, prophets; and some, evangelists; 
+              and some, pastors and teachers; For the perfecting of the saints...&quot; - Ephesians 4:11-12
             </p>
             <p className="text-lg text-white/90 leading-relaxed max-w-2xl mx-auto">
               Meet the dedicated servants whom God has called to lead Revival Ark International Ministries 
@@ -288,7 +288,7 @@ export default function LeadershipPage() {
               </div>
               <h3 className="text-xl font-bold mb-3">Servant Leadership</h3>
               <p className="text-primary-100 leading-relaxed">
-                We lead by serving, following Christ's example of humility and love.
+                We lead by serving, following Christ&apos;s example of humility and love.
               </p>
             </div>
             
@@ -323,7 +323,7 @@ export default function LeadershipPage() {
           </h2>
           <p className="text-xl text-secondary-200 mb-8 max-w-2xl mx-auto">
             God is raising up leaders for this generation. If you feel called to serve 
-            in leadership, we'd love to hear from you.
+            in leadership, we&apos;d love to hear from you.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link

@@ -13,10 +13,9 @@ export default function DoctrinalBeliefsPage() {
 
   const doctrinalBeliefs = [
     {
-      title: 'The Holy Scriptures',
-      summary: 'We believe in the divine inspiration and authority of the Bible.',
-      content: `We believe that the Bible is the inspired Word of God, written by holy men of old as they were moved by the Holy Spirit (2 Timothy 3:16, 2 Peter 1:21). The Scriptures are infallible, inerrant in the original manuscripts, and the supreme and final authority for faith and life. The Bible is God's revelation to man and is the only rule for Christian faith and practice.`,
-      verses: ['2 Timothy 3:16-17', '2 Peter 1:20-21', 'Psalm 119:105', 'Isaiah 40:8']
+      title: 'The Scriptures',
+      content: `We believe that the Bible is the inspired Word of God, written by holy men of old as they were moved by the Holy Spirit (2 Timothy 3:16, 2 Peter 1:21). The Scriptures are infallible, inerrant in the original manuscripts, and the supreme and final authority for faith and life. The Bible is God&apos;s revelation to man and is the only rule for Christian faith and practice.`,
+      icon: BookOpenIcon,
     },
     {
       title: 'The Godhead',
@@ -45,7 +44,7 @@ export default function DoctrinalBeliefsPage() {
     {
       title: 'Eternal Security',
       summary: 'We believe in the eternal security of the believer.',
-      content: `We believe that all who are truly born again are kept by God's power and are secure in Christ forever. The believer's eternal security is based not on their performance but on God's faithfulness and the finished work of Christ. Nothing can separate the believer from the love of God (John 10:28-29; Romans 8:38-39; 1 Peter 1:5).`,
+      content: `We believe that all who are truly born again are kept by God&apos;s power and are secure in Christ forever. The believer&apos;s eternal security is based not on their performance but on God&apos;s faithfulness and the finished work of Christ. Nothing can separate the believer from the love of God (John 10:28-29; Romans 8:38-39; 1 Peter 1:5).`,
       verses: ['John 10:28-29', 'Romans 8:38-39', '1 Peter 1:3-5', 'Jude 1:24']
     },
     {
@@ -57,7 +56,7 @@ export default function DoctrinalBeliefsPage() {
     {
       title: 'Baptism and Communion',
       summary: 'We believe in two ordinances: baptism and communion.',
-      content: `We believe that Christian baptism is the immersion of a believer in water in the name of the Father, Son, and Holy Spirit. It is an act of obedience symbolizing the believer's faith in a crucified, buried, and risen Savior. Communion is a symbolic act of obedience whereby believers remember the Lord's death until He comes (Matthew 28:19; Romans 6:4; 1 Corinthians 11:23-26).`,
+      content: `We believe that Christian baptism is the immersion of a believer in water in the name of the Father, Son, and Holy Spirit. It is an act of obedience symbolizing the believer&apos;s faith in a crucified, buried, and risen Savior. Communion is a symbolic act of obedience whereby believers remember the Lord&apos;s death until He comes (Matthew 28:19; Romans 6:4; 1 Corinthians 11:23-26).`,
       verses: ['Matthew 28:19', 'Romans 6:3-4', '1 Corinthians 11:23-26', 'Acts 8:36-39']
     },
     {
@@ -75,7 +74,7 @@ export default function DoctrinalBeliefsPage() {
     {
       title: 'The Second Coming',
       summary: 'We believe in the personal, visible return of Jesus Christ.',
-      content: `We believe in the personal, visible, and imminent return of Jesus Christ to earth. This includes the rapture of the church, the seven-year tribulation period, the second coming of Christ to establish His millennial kingdom, and the eternal state. We believe that Christ's return is the blessed hope of the church (1 Thessalonians 4:16-17; Revelation 19:11-16; Titus 2:13).`,
+      content: `We believe in the personal, visible, and imminent return of Jesus Christ to earth. This includes the rapture of the church, the seven-year tribulation period, the second coming of Christ to establish His millennial kingdom, and the eternal state. We believe that Christ&apos;s return is the blessed hope of the church (1 Thessalonians 4:16-17; Revelation 19:11-16; Titus 2:13).`,
       verses: ['1 Thessalonians 4:16-17', 'Acts 1:11', 'Revelation 19:11-16', 'Titus 2:13']
     },
     {
@@ -106,8 +105,8 @@ export default function DoctrinalBeliefsPage() {
               Our Doctrinal Beliefs
             </h1>
             <p className="text-xl lg:text-2xl text-primary-100 leading-relaxed font-serif italic mb-8 max-w-4xl mx-auto">
-              "All scripture is given by inspiration of God, and is profitable for doctrine, 
-              for reproof, for correction, for instruction in righteousness" - 2 Timothy 3:16
+              &quot;All scripture is given by inspiration of God, and is profitable for doctrine, 
+              for reproof, for correction, for instruction in righteousness&quot; - 2 Timothy 3:16
             </p>
             <p className="text-lg text-white/90 leading-relaxed max-w-3xl mx-auto">
               These are the fundamental biblical truths that form the foundation of our faith 
@@ -176,7 +175,7 @@ export default function DoctrinalBeliefsPage() {
                           Key Scripture References:
                         </h4>
                         <div className="flex flex-wrap gap-2">
-                          {belief.verses.map((verse, idx) => (
+                          {(belief.verses ?? []).map((verse, idx) => (
                             <span
                               key={idx}
                               className="inline-block px-3 py-1 bg-primary-100 text-primary-700 text-sm rounded-full font-medium"
@@ -211,10 +210,10 @@ export default function DoctrinalBeliefsPage() {
                 ministry activities are guided by these foundational truths.
               </p>
               <blockquote className="text-xl font-serif italic text-primary-700 border-l-4 border-primary-500 pl-6 mb-8">
-                "But continue thou in the things which thou hast learned and hast been assured of, 
+                &quot;But continue thou in the things which thou hast learned and hast been assured of, 
                 knowing of whom thou hast learned them; And that from a child thou hast known the 
                 holy scriptures, which are able to make thee wise unto salvation through faith 
-                which is in Christ Jesus." - 2 Timothy 3:14-15
+                which is in Christ Jesus.&quot; - 2 Timothy 3:14-15
               </blockquote>
             </div>
           </div>
@@ -228,7 +227,7 @@ export default function DoctrinalBeliefsPage() {
             Questions About Our Beliefs?
           </h2>
           <p className="text-xl text-secondary-200 mb-8 max-w-2xl mx-auto">
-            We'd love to discuss these biblical truths with you. Our pastors and teachers 
+            We&apos;d love to discuss these biblical truths with you. Our pastors and teachers 
             are available to answer questions and provide further clarification.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

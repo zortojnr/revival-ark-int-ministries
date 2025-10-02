@@ -1,13 +1,19 @@
 import { NextRequest, NextResponse } from 'next/server';
 import Stripe from 'stripe';
 
-// Initialize Stripe with your secret key
-const stripe = new Stripe(process.env.Ssk_test_51SBDWQ3ZS2P9RpoSSOtbnW1RGLkJAvwsFUZfePPiQxFOTwYk1WAL42okkvLyGcwz2qbBH0vInp63blms7DyhK88700YaZDwq7o || '', {
-  apiVersion: '2025-08-27.basil',
-});
+// Initialize Stripe only if secret key is configured
+const secretKey = process.env.STRIPE_SECRET_KEY;
+const stripe = secretKey ? new Stripe(secretKey) : null;
 
 export async function POST(request: NextRequest) {
   try {
+    if (!stripe) {
+      return NextResponse.json(
+        { error: 'Stripe secret key not configured' },
+        { status: 500 }
+      );
+    }
+
     const { amount, currency = 'ngn', donationType, donorInfo } = await request.json();
 
     // Validate the amount (minimum ₦500 for Nigerian Naira)

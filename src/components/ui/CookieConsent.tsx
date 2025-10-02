@@ -8,11 +8,11 @@ import Button from './Button';
 // Extend Window interface to include dataLayer
 declare global {
   interface Window {
-    dataLayer: any[];
-    gtag: (...args: any[]) => void;
-    fbq: any;
-    _fbq: any;
-    Tawk_API: any;
+    dataLayer: unknown[];
+    gtag: (...args: unknown[]) => void;
+    fbq: unknown;
+    _fbq: unknown;
+    Tawk_API: unknown;
     Tawk_LoadStart: Date;
   }
 }
@@ -123,7 +123,7 @@ export default function CookieConsent() {
 
     // Initialize gtag
     window.dataLayer = window.dataLayer || [];
-    function gtag(...args: any[]) {
+    function gtag(...args: unknown[]) {
       window.dataLayer.push(args);
     }
     
@@ -134,7 +134,7 @@ export default function CookieConsent() {
     });
 
     // Make gtag globally available
-    (window as any).gtag = gtag;
+    (window as unknown as { gtag: typeof gtag }).gtag = gtag;
     
     console.log('Google Analytics initialized with ID:', GA_MEASUREMENT_ID);
   };
@@ -148,20 +148,33 @@ export default function CookieConsent() {
       const loadFacebookPixel = () => {
         if (window.fbq) return;
         
-        const fbq: any = function(...args: any[]) {
-          if (fbq.callMethod) {
-            fbq.callMethod.apply(fbq, args);
+        const fbq = (function (...args: unknown[]) {
+          const self = fbq as unknown as {
+            callMethod?: (...a: unknown[]) => void;
+            queue: unknown[];
+          };
+          if (self.callMethod) {
+            // Use spread operator instead of .apply to satisfy lint rule
+            self.callMethod(...args);
           } else {
-            fbq.queue.push(args);
+            self.queue.push(args);
           }
+        } as unknown) as {
+          (...a: unknown[]): void;
+          callMethod?: (...a: unknown[]) => void;
+          push: (...a: unknown[]) => void;
+          loaded: boolean;
+          version: string;
+          queue: unknown[];
         };
         
-        if (!window._fbq) window._fbq = fbq;
+        if (!(window as unknown as { _fbq?: typeof fbq })._fbq) {
+          (window as unknown as { _fbq?: typeof fbq })._fbq = fbq;
+        }
         fbq.push = fbq;
         fbq.loaded = true;
         fbq.version = '2.0';
         fbq.queue = [];
-        fbq.callMethod = null;
         
         const script = document.createElement('script');
         script.async = true;
@@ -172,12 +185,14 @@ export default function CookieConsent() {
           firstScript.parentNode.insertBefore(script, firstScript);
         }
         
-        window.fbq = fbq;
+        // Assign to window so global calls can reference it safely
+        (window as unknown as { fbq?: typeof fbq }).fbq = fbq;
       };
       
       loadFacebookPixel();
-      window.fbq('init', FACEBOOK_PIXEL_ID);
-      window.fbq('track', 'PageView');
+      // Safely reference fbq via window with optional chaining
+      (window as unknown as { fbq?: (...a: unknown[]) => void }).fbq?.('init', FACEBOOK_PIXEL_ID as unknown as string);
+      (window as unknown as { fbq?: (...a: unknown[]) => void }).fbq?.('track', 'PageView');
       
       console.log('Facebook Pixel initialized with ID:', FACEBOOK_PIXEL_ID);
     }
@@ -186,12 +201,15 @@ export default function CookieConsent() {
   };
 
   const initializeFunctionalTools = () => {
-    // Chat widget implementation (example with Tawk.to)
+    // Tawk.to Chat Widget implementation
     const TAWK_PROPERTY_ID = process.env.NEXT_PUBLIC_TAWK_PROPERTY_ID;
     const TAWK_WIDGET_ID = process.env.NEXT_PUBLIC_TAWK_WIDGET_ID;
     
     if (TAWK_PROPERTY_ID && TAWK_WIDGET_ID) {
-      // Load Tawk.to chat widget
+      // Initialize Tawk.to
+      window.Tawk_API = window.Tawk_API || {};
+      window.Tawk_LoadStart = new Date();
+      
       const script = document.createElement('script');
       script.async = true;
       script.src = `https://embed.tawk.to/${TAWK_PROPERTY_ID}/${TAWK_WIDGET_ID}`;
@@ -204,15 +222,6 @@ export default function CookieConsent() {
     
     // Other functional tools can be added here
     console.log('Functional tools initialized');
-  };
-
-  const handlePreferenceChange = (type: keyof CookiePreferences, value: boolean) => {
-    if (type === 'necessary') return; // Cannot disable necessary cookies
-    
-    setPreferences(prev => ({
-      ...prev,
-      [type]: value,
-    }));
   };
 
   if (!showBanner) {
@@ -233,7 +242,7 @@ export default function CookieConsent() {
                   </h3>
                   <p className="body-small text-secondary-600 max-w-2xl">
                     We use cookies to enhance your browsing experience, serve personalized content, 
-                    and analyze our traffic. By clicking "Accept All", you consent to our use of cookies. 
+                    and analyze our traffic. By clicking &quot;Accept All&quot;, you consent to our use of cookies. 
                     You can manage your preferences or learn more in our{' '}
                     <Link href="/privacy" className="text-primary-600 hover:text-primary-700 underline">
                       Privacy Policy

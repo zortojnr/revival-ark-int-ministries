@@ -25,38 +25,38 @@ const donationOptions: DonationOption[] = [
   },
   {
     id: 'offering',
-    amount: 20000,
+    amount: 0,
     label: 'General Offering',
     description: 'Support our ministry operations and outreach programs'
   },
   {
     id: 'missions',
-    amount: 40000,
+    amount: 0,
     label: 'Missions Support',
     description: 'Fund evangelism and missions work',
     popular: true
   },
   {
     id: 'building',
-    amount: 80000,
+    amount: 0,
     label: 'Building Fund',
     description: 'Help expand our ministry facilities'
   },
   {
     id: 'youth',
-    amount: 30000,
+    amount: 0,
     label: 'Youth Ministry',
     description: 'Support youth programs and activities'
   },
   {
     id: 'orphans',
-    amount: 60000,
+    amount: 0,
     label: 'Orphan Care',
     description: 'Provide care and support for orphaned children'
   }
 ];
 
-const quickAmounts = [10000, 20000, 40000, 100000, 200000, 400000];
+const quickAmounts = [5000, 10000, 25000, 50000, 100000, 250000];
 
 export default function GivePage() {
   const [selectedOption, setSelectedOption] = useState<string>('offering');
@@ -141,8 +141,16 @@ export default function GivePage() {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-primary-600 via-primary-700 to-secondary-800 text-white py-20">
-        <div className="absolute inset-0 bg-black/20"></div>
+      <section 
+        className="relative text-white py-20"
+        style={{
+          backgroundImage: 'url(/images/1.jpeg)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat'
+        }}
+      >
+        <div className="absolute inset-0 bg-black/60"></div>
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="flex justify-center mb-6">
             <div className="p-4 bg-white/10 backdrop-blur-sm rounded-full">
@@ -152,7 +160,7 @@ export default function GivePage() {
           <h1 className="heading-primary mb-8">
             Partner With Us in Ministry
           </h1>
-          <p className="text-xl-enhanced text-primary-100 max-w-3xl mx-auto">
+          <p className="text-xl-enhanced text-white/90 max-w-3xl mx-auto">
             Your generous giving enables us to spread the Gospel, support missions, 
             and transform lives in our community and beyond.
           </p>
@@ -338,55 +346,52 @@ export default function GivePage() {
       </section>
 
       {/* Impact Section */}
-      <section className="py-20 bg-primary-50">
+      <section className="py-20" style={{ backgroundColor: '#50C878' }}>
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="heading-secondary mb-6 text-secondary-800">
+            <h2 className="heading-secondary mb-6 text-white">
               Your Impact
             </h2>
-            <div className="w-24 h-1 bg-primary-500 mx-auto mb-6"></div>
-            <p className="text-lg-enhanced text-secondary-700 max-w-3xl mx-auto">
+            <div className="w-24 h-1 bg-white mx-auto mb-6"></div>
+            <p className="text-lg-enhanced text-white/90 max-w-3xl mx-auto">
               See how your generous giving is making a difference in lives and communities.
             </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-10">
             <div className="text-center p-8 card-elevated">
-              <div className="icon-container-lg bg-primary-100 mx-auto">
-                <HandRaisedIcon className="h-10 w-10 text-primary-600" />
+              <div className="icon-container-lg bg-white/20 mx-auto">
+                <HandRaisedIcon className="h-10 w-10 text-white" />
               </div>
-              <h3 className="text-xl-enhanced font-semibold text-secondary-900 mb-3">
-                Souls Reached
+              <h3 className="text-xl-enhanced font-semibold text-white mb-3">
+                Gospel Outreach
               </h3>
-              <p className="text-4xl font-bold text-primary-600 mb-4">2,500+</p>
-              <p className="text-body text-secondary-600">
-                Lives touched through evangelism and outreach programs
+              <p className="text-body text-white/80">
+                Supporting evangelism and revival crusades to reach the lost
               </p>
             </div>
 
             <div className="text-center p-8 card-elevated">
-              <div className="icon-container-lg bg-accent-100 mx-auto">
-                <HeartIcon className="h-10 w-10 text-accent-600" />
+              <div className="icon-container-lg bg-white/20 mx-auto">
+                <HeartIcon className="h-10 w-10 text-white" />
               </div>
-              <h3 className="text-xl-enhanced font-semibold text-secondary-900 mb-3">
-                Orphans Supported
+              <h3 className="text-xl-enhanced font-semibold text-white mb-3">
+                Orphan Care Ministry
               </h3>
-              <p className="text-4xl font-bold text-accent-600 mb-4">150+</p>
-              <p className="text-body text-secondary-600">
-                Children receiving care, education, and spiritual guidance
+              <p className="text-body text-white/80">
+                Providing care, education, and spiritual guidance for children in need
               </p>
             </div>
 
             <div className="text-center p-8 card-elevated">
-              <div className="icon-container-lg bg-secondary-100 mx-auto">
-                <GiftIcon className="h-10 w-10 text-secondary-600" />
+              <div className="icon-container-lg bg-white/20 mx-auto">
+                <GiftIcon className="h-10 w-10 text-white" />
               </div>
-              <h3 className="text-xl-enhanced font-semibold text-secondary-900 mb-3">
-                Communities Served
+              <h3 className="text-xl-enhanced font-semibold text-white mb-3">
+                Ministry Operations
               </h3>
-              <p className="text-4xl font-bold text-secondary-600 mb-4">25+</p>
-              <p className="text-body text-secondary-600">
-                Local communities impacted through various ministry programs
+              <p className="text-body text-white/80">
+                Supporting daily operations and community outreach programs
               </p>
             </div>
           </div>

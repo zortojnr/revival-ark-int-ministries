@@ -1,5 +1,4 @@
 import Layout from '@/components/layout/Layout';
-import Image from 'next/image';
 import Link from 'next/link';
 import { 
   HeartIcon, 
@@ -83,7 +82,7 @@ export default function WhoWeArePage() {
                 Who We Are
               </h1>
               <p className="text-xl lg:text-2xl text-primary-100 leading-relaxed font-serif italic mb-8">
-                "And he said unto them, Go ye into all the world, and preach the gospel to every creature." 
+                &quot;And he said unto them, Go ye into all the world, and preach the gospel to every creature.&quot; 
                 - Mark 16:15
               </p>
               <p className="text-lg text-white/90 leading-relaxed">
@@ -243,7 +242,7 @@ export default function WhoWeArePage() {
           </h2>
           <p className="text-xl text-secondary-200 mb-8 max-w-2xl mx-auto">
             God is still writing our story, and He wants to include you in the next chapter. 
-            Discover how you can be part of what He's doing through Revival Ark.
+            Discover how you can be part of what He&apos;s doing through Revival Ark.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link

@@ -4,7 +4,7 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { motion, easeOut } from 'framer-motion';
-import { CalendarIcon, PlayIcon, BookOpenIcon, ArrowRightIcon, SparklesIcon } from '@heroicons/react/24/outline';
+import { PlayIcon, ArrowRightIcon, SparklesIcon } from '@heroicons/react/24/outline';
 
 interface Sermon {
   id: number;
@@ -91,14 +91,7 @@ export default function HighlightsSection() {
     });
   };
 
-  const getCategoryColor = (category: string) => {
-    switch (category) {
-      case 'Conference': return 'bg-primary-50 text-primary-700 border border-primary-200';
-      case 'Youth': return 'bg-accent-50 text-accent-700 border border-accent-200';
-      case 'Outreach': return 'bg-secondary-50 text-secondary-700 border border-secondary-200';
-      default: return 'bg-neutral-50 text-neutral-700 border border-neutral-200';
-    }
-  };
+
 
   return (
     <section className="section-padding bg-gradient-to-b from-primary-50 to-white relative overflow-hidden">
@@ -124,7 +117,7 @@ export default function HighlightsSection() {
               Our Foundation
             </span>
             <h2 className="heading-2 text-secondary-800 mb-4">
-              Built on God's <span className="text-primary-500 font-bold">Word</span>
+              Built on God&apos;s <span className="text-primary-500 font-bold">Word</span>
             </h2>
             <p className="body-large text-secondary-600 max-w-2xl mx-auto">
               Every ministry initiative is rooted in the eternal truths of Scripture, guiding our mission to bring revival to the nations.
@@ -155,7 +148,7 @@ export default function HighlightsSection() {
                     </div>
                   </div>
                   <p className="text-secondary-700 leading-relaxed font-serif italic text-lg group-hover:text-secondary-800 transition-colors">
-                    "{scripture.text}"
+                    &quot;{scripture.text}&quot;
                   </p>
                 </div>
               </motion.div>
@@ -190,7 +183,7 @@ export default function HighlightsSection() {
             </motion.div>
 
             <motion.div className="space-y-6" variants={containerVariants}>
-              {recentSermons.map((sermon, index) => (
+              {recentSermons.map((sermon) => (
                 <motion.div
                   key={sermon.id}
                   variants={itemVariants}

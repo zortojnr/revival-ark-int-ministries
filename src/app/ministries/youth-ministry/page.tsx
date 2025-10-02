@@ -1,7 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-import Image from 'next/image';
 import Link from 'next/link';
 import { 
   HeartIcon, 
@@ -117,7 +116,7 @@ export default function YouthMinistryPage() {
                 Youth Ministry
               </h1>
               <p className="text-lg md:text-xl text-primary-100 mb-8">
-                "Don't let anyone look down on you because you are young, but set an example for the believers in speech, in conduct, in love, in faith and in purity."
+                &quot;Don&apos;t let anyone look down on you because you are young, but set an example for the believers in speech, in conduct, in love, in faith and in purity.&quot;
               </p>
               <p className="text-base text-primary-200 mb-8">
                 1 Timothy 4:12 (NIV)
@@ -187,7 +186,7 @@ export default function YouthMinistryPage() {
                 <AcademicCapIcon className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-xl font-semibold text-secondary-800 mb-2">Biblical Foundation</h3>
-              <p className="text-secondary-600">Building lives on the solid foundation of God's Word</p>
+              <p className="text-secondary-600">Building lives on the solid foundation of God&apos;s Word</p>
             </div>
             <div className="text-center">
               <div className="w-16 h-16 bg-primary-500 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -342,7 +341,7 @@ export default function YouthMinistryPage() {
           <div className="grid md:grid-cols-3 gap-8">
             {testimonials.map((testimonial, index) => (
               <div key={index} className="bg-primary-50 rounded-lg shadow-md p-8 border border-primary-200">
-                <p className="text-secondary-600 mb-6 italic">"{testimonial.testimony}"</p>
+                <p className="text-secondary-600 mb-6 italic">&quot;{testimonial.testimony}&quot;</p>
                 <div className="border-t border-primary-300 pt-6">
                   <h4 className="font-semibold text-secondary-900">{testimonial.name}</h4>
                   <p className="text-sm text-secondary-500">Age {testimonial.age} • {testimonial.role}</p>

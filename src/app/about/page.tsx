@@ -1,6 +1,5 @@
 import Layout from '@/components/layout/Layout';
 import Link from 'next/link';
-import Image from 'next/image';
 import { 
   ArrowRightIcon, 
   HeartIcon, 
@@ -11,8 +10,7 @@ import {
   HandRaisedIcon,
   ShieldCheckIcon,
   AcademicCapIcon,
-  SparklesIcon,
-  CheckCircleIcon
+  SparklesIcon
 } from '@heroicons/react/24/outline';
 
 export default function AboutPage() {
@@ -108,7 +106,7 @@ export default function AboutPage() {
               Revival Ark International Ministries
             </h2>
             <p className="text-xl lg:text-2xl text-white/95 max-w-3xl mx-auto leading-relaxed font-serif italic drop-shadow-md">
-              "Will You not revive us again, that Your people may rejoice in You?" – Psalm 85:6
+              &quot;Will You not revive us again, that Your people may rejoice in You?&quot; – Psalm 85:6
             </p>
           </div>
         </div>
@@ -146,7 +144,7 @@ export default function AboutPage() {
                 <div>
                   <h3 className="text-xl font-semibold text-secondary-800 mb-2">Our Heart</h3>
                   <p className="text-secondary-700">
-                    We are passionate about seeing lives transformed through the power of God's love 
+                    We are passionate about seeing lives transformed through the power of God&apos;s love 
                     and the message of salvation in Jesus Christ.
                   </p>
                 </div>
@@ -176,7 +174,7 @@ export default function AboutPage() {
                 <div>
                   <h3 className="text-xl font-semibold text-secondary-800 mb-2">Our Foundation</h3>
                   <p className="text-secondary-700">
-                    Every aspect of our ministry is built upon the solid foundation of God's Word, 
+                    Every aspect of our ministry is built upon the solid foundation of God&apos;s Word, 
                     ensuring biblical truth guides all we do.
                   </p>
                 </div>
@@ -191,7 +189,7 @@ export default function AboutPage() {
                   </div>
                   <h3 className="text-2xl font-bold text-secondary-800 mb-4">Revival Ark</h3>
                   <p className="text-secondary-700 text-lg">
-                    "Will You not revive us again, that Your people may rejoice in You?" 
+                    &quot;Will You not revive us again, that Your people may rejoice in You?&quot; 
                     <br />
                     <span className="font-semibold">- Psalm 85:6</span>
                   </p>
@@ -215,12 +213,12 @@ export default function AboutPage() {
                 Our Vision
               </h2>
               <p className="text-lg text-secondary-700 leading-relaxed mb-8">
-                To be a global ark of revival, raising a generation aflame with God's presence, rooted in truth, and transforming nations through the power of the Holy Spirit.
+                To be a global ark of revival, raising a generation aflame with God&apos;s presence, rooted in truth, and transforming nations through the power of the Holy Spirit.
               </p>
               <div className="bg-primary-200 rounded-xl p-6 border border-primary-300">
                 <p className="text-secondary-800 font-medium italic">
-                  "For the earth will be filled with the knowledge of the glory of the Lord 
-                  as the waters cover the sea." - Habakkuk 2:14
+                  &quot;For the earth will be filled with the knowledge of the glory of the Lord 
+                  as the waters cover the sea.&quot; - Habakkuk 2:14
                 </p>
               </div>
             </div>
@@ -294,12 +292,12 @@ export default function AboutPage() {
           </h2>
           <div className="max-w-4xl mx-auto space-y-6">
             <blockquote className="text-xl lg:text-2xl font-serif italic text-primary-100 leading-relaxed">
-              "Will You not revive us again, that Your people may rejoice in You?"
+              &quot;Will You not revive us again, that Your people may rejoice in You?&quot;
             </blockquote>
             <p className="text-lg text-primary-200">– Psalm 85:6</p>
             
             <blockquote className="text-xl lg:text-2xl font-serif italic text-primary-100 leading-relaxed mt-8">
-              "Prepare the way of the Lord, make His paths straight."
+              &quot;Prepare the way of the Lord, make His paths straight.&quot;
             </blockquote>
             <p className="text-lg text-primary-200">– Isaiah 40:3</p>
           </div>
@@ -317,10 +315,10 @@ export default function AboutPage() {
           
           <div className="max-w-4xl mx-auto">
             <p className="text-lg lg:text-xl text-secondary-700 leading-relaxed mb-8">
-              Revival Ark International Ministries was birthed out of a burden for revival—a cry to see God's fire rekindled in the hearts of men, and for His glory to fill the earth as the waters cover the sea.
+              Revival Ark International Ministries was birthed out of a burden for revival—a cry to see God&apos;s fire rekindled in the hearts of men, and for His glory to fill the earth as the waters cover the sea.
             </p>
             <p className="text-lg lg:text-xl text-secondary-700 leading-relaxed mb-8">
-              Founded by Haruna A'aron Saleh, the ministry began with small prayer gatherings and campus outreaches, which grew into a wider movement across cities and nations. Today, Revival Ark carries the mandate to reach the world with the Gospel through evangelism, discipleship, prayer, and acts of compassion.
+              Founded by Haruna A&apos;aron Saleh, the ministry began with small prayer gatherings and campus outreaches, which grew into a wider movement across cities and nations. Today, Revival Ark carries the mandate to reach the world with the Gospel through evangelism, discipleship, prayer, and acts of compassion.
             </p>
           </div>
         </div>
@@ -337,7 +335,7 @@ export default function AboutPage() {
           
           <div className="max-w-4xl mx-auto text-center">
             <p className="text-lg lg:text-xl text-secondary-700 leading-relaxed">
-              Haruna A'aron Saleh is the founding leader of Revival Ark International Ministries. A servant of God with a passion for prayer, revival, and discipleship, he is committed to raising a generation of believers who burn with the fire of the Holy Spirit and live for Christ with integrity. Through teaching, preaching, writing, and mentoring, he continues to inspire many to draw near to God and walk in their divine calling.
+              Haruna A&apos;aron Saleh is the founding leader of Revival Ark International Ministries. A servant of God with a passion for prayer, revival, and discipleship, he is committed to raising a generation of believers who burn with the fire of the Holy Spirit and live for Christ with integrity. Through teaching, preaching, writing, and mentoring, he continues to inspire many to draw near to God and walk in their divine calling.
             </p>
           </div>
         </div>
@@ -406,7 +404,7 @@ export default function AboutPage() {
           </h2>
           <p className="text-xl text-secondary-200 mb-8 max-w-2xl mx-auto">
             Be part of what God is doing in this generation. Whether through partnership, 
-            volunteering, or prayer, there's a place for you in this move of God.
+            volunteering, or prayer, there&apos;s a place for you in this move of God.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link

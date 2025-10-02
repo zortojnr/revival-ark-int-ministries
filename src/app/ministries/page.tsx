@@ -1,6 +1,5 @@
 import Layout from '@/components/layout/Layout';
 import Link from 'next/link';
-import Image from 'next/image';
 import { 
   HeartIcon, 
   GlobeAltIcon, 
@@ -131,9 +130,9 @@ export default function MinistriesPage() {
               Our Ministries
             </h1>
             <p className="text-xl lg:text-2xl text-primary-100 leading-relaxed font-serif italic mb-10 max-w-4xl mx-auto text-xl-enhanced">
-              "And he gave some, apostles; and some, prophets; and some, evangelists; 
+              &quot;And he gave some, apostles; and some, prophets; and some, evangelists; 
               and some, pastors and teachers; For the perfecting of the saints, 
-              for the work of the ministry..." - Ephesians 4:11-12
+              for the work of the ministry...&quot; - Ephesians 4:11-12
             </p>
             <p className="text-lg text-white/90 leading-relaxed max-w-3xl mx-auto text-lg-enhanced">
               God has called Revival Ark to serve in multiple areas of ministry, 
@@ -161,7 +160,7 @@ export default function MinistriesPage() {
                 Revival Ark International Ministries operates across multiple spheres of ministry, 
                 each flowing from our core mission to prepare the way of the Lord. From evangelism 
                 to education, from caring for orphans to training leaders, every ministry is designed 
-                to advance God's kingdom and transform lives.
+                to advance God&apos;s kingdom and transform lives.
               </p>
               
               <div className="grid md:grid-cols-3 gap-10 mt-16">
@@ -201,7 +200,7 @@ export default function MinistriesPage() {
             </h2>
             <div className="w-24 h-1 bg-primary-500 mx-auto mb-8"></div>
             <p className="text-lg text-secondary-700 max-w-3xl mx-auto leading-relaxed">
-              Each ministry area represents a unique calling to serve God's people and advance His kingdom.
+              Each ministry area represents a unique calling to serve God&apos;s people and advance His kingdom.
             </p>
           </div>
 
@@ -267,7 +266,7 @@ export default function MinistriesPage() {
             </h2>
             <div className="w-24 h-1 bg-primary-500 mx-auto mb-8"></div>
             <p className="text-lg text-secondary-700 max-w-2xl mx-auto">
-              God has been faithful in multiplying our efforts. Here's a glimpse of the impact 
+              God has been faithful in multiplying our efforts. Here&apos;s a glimpse of the impact 
               across our various ministries.
             </p>
           </div>
@@ -301,7 +300,7 @@ export default function MinistriesPage() {
           </h2>
           <p className="text-xl text-secondary-200 mb-8 max-w-2xl mx-auto">
             God is calling people to serve in every area of ministry. Whether through volunteering, 
-            partnership, or financial support, there's a place for you in what God is doing.
+            partnership, or financial support, there&apos;s a place for you in what God is doing.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link

@@ -149,10 +149,10 @@ export default function ChildrenMinistryPage() {
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <div>
               <h1 className="text-3xl md:text-4xl font-bold heading-primary mb-6">
-                Children's Ministry
+                Children&apos;s Ministry
               </h1>
               <p className="text-lg md:text-xl text-accent-100 mb-8">
-                "Let the little children come to me, and do not hinder them, for the kingdom of heaven belongs to such as these."
+                &quot;Let the little children come to me, and do not hinder them, for the kingdom of heaven belongs to such as these.&quot;
               </p>
               <p className="text-base text-accent-200 mb-8">
                 Matthew 19:14 (NIV)
@@ -162,7 +162,7 @@ export default function ChildrenMinistryPage() {
                   href="/contact"
                   className="bg-white text-accent-600 px-8 py-4 rounded-lg font-semibold hover:bg-accent-50 transition-colors text-center"
                 >
-                  Join Children's Ministry
+                  Join Children&apos;s Ministry
                 </Link>
                 <Link
                   href="/events"
@@ -207,12 +207,12 @@ export default function ChildrenMinistryPage() {
           <div className="w-24 h-1 bg-primary-500 mx-auto mb-8"></div>
           <p className="text-lg text-secondary-600 leading-relaxed mb-8">
             To partner with parents in raising children who know, love, and serve Jesus Christ. 
-            We create a safe, fun, and engaging environment where children can discover God's love, 
+            We create a safe, fun, and engaging environment where children can discover God&apos;s love, 
             learn biblical truths, and develop lasting friendships.
           </p>
           <div className="bg-primary-100 rounded-xl p-8 border-l-4 border-primary-500">
             <p className="text-lg text-primary-700 italic">
-              "Train up a child in the way he should go; even when he is old he will not depart from it." 
+              &quot;Train up a child in the way he should go; even when he is old he will not depart from it.&quot; 
               - Proverbs 22:6
             </p>
           </div>
@@ -361,7 +361,7 @@ export default function ChildrenMinistryPage() {
               Our Leadership Team
             </h2>
             <p className="text-xl text-secondary-600">
-              Dedicated leaders committed to nurturing your child's spiritual growth
+              Dedicated leaders committed to nurturing your child&apos;s spiritual growth
             </p>
           </div>
 
@@ -388,14 +388,14 @@ export default function ChildrenMinistryPage() {
               Parent Testimonials
             </h2>
             <p className="text-lg text-secondary-600">
-              Hear from parents about their children's experience in our ministry
+              Hear from parents about their children&apos;s experience in our ministry
             </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
             {testimonials.map((testimonial, index) => (
               <div key={index} className="bg-gradient-to-br from-yellow-50 to-orange-50 rounded-lg shadow-md p-8">
-                <p className="text-gray-600 mb-4 italic">"{testimonial.testimony}"</p>
+                <p className="text-gray-600 mb-4 italic">&quot;{testimonial.testimony}&quot;</p>
                 <div className="border-t border-orange-200 pt-4">
                   <h4 className="font-semibold text-charcoal">{testimonial.parent}</h4>
                   <p className="text-sm text-gray-500">Parent of {testimonial.child}</p>
@@ -411,7 +411,7 @@ export default function ChildrenMinistryPage() {
       <section id="register" className="py-20 bg-gradient-to-r from-accent-500 to-primary-500 text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-2xl md:text-3xl font-bold heading-primary mb-8">
-            Join Our Children's Ministry
+            Join Our Children&apos;s Ministry
           </h2>
           <p className="text-lg text-accent-100 mb-12">
             We would love to welcome your child into our ministry family. 
@@ -443,7 +443,7 @@ export default function ChildrenMinistryPage() {
               href="/contact"
               className="bg-white text-accent-600 px-8 py-4 rounded-lg font-semibold hover:bg-accent-50 transition-colors"
             >
-              Contact Children's Pastor
+              Contact Children&apos;s Pastor
             </Link>
             <Link
               href="/events"

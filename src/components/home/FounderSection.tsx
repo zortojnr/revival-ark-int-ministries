@@ -40,7 +40,7 @@ export default function FounderSection() {
                   <Image
                     key={image}
                     src={image}
-                    alt="Haruna A'aron Saleh - Founder of Revival Ark International"
+                    alt="Haruna A&apos;aron Saleh - Founder of Revival Ark International"
                     fill
                     className={`object-cover transition-all duration-1000 group-hover:scale-105 ${
                       index === currentImageIndex 
@@ -82,7 +82,7 @@ export default function FounderSection() {
                   Meet Our <span className="text-revival-gradient">Founder</span>
                 </h2>
                 <h3 className="text-2xl lg:text-3xl font-bold text-primary-600 mb-2">
-                  Haruna A'aron Saleh
+                  Haruna A&apos;aron Saleh
                 </h3>
                 <p className="text-lg text-primary-500 font-medium">
                   Founder & Visionary Leader
@@ -98,17 +98,17 @@ export default function FounderSection() {
               viewport={{ once: true }}
             >
               <p className="text-xl leading-relaxed">
-                Haruna A'aron Saleh is the visionary founder of Revival Ark International Ministries. 
+                Haruna A&apos;aron Saleh is the visionary founder of Revival Ark International Ministries. 
                 A servant of God with a passion for prayer, revival, and discipleship, he carries a 
                 strong prophetic and teaching grace with a mandate to awaken hearts and raise a 
                 generation that is aflame with the fire of the Holy Spirit.
               </p>
               
               <p>
-                With years of ministry experience, Haruna A'aron Saleh is committed to proclaiming 
-                the uncompromising truth of God's Word, mentoring believers into maturity, and 
+                With years of ministry experience, Haruna A&apos;aron Saleh is committed to proclaiming 
+                the uncompromising truth of God&apos;s Word, mentoring believers into maturity, and 
                 equipping leaders for kingdom impact. His heart beats for global revival, campus 
-                transformation, and raising disciples who will carry Christ's light into every 
+                transformation, and raising disciples who will carry Christ&apos;s light into every 
                 sphere of life.
               </p>
 
