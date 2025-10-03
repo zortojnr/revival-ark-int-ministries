@@ -110,6 +110,12 @@ export default function YouthMinistryPage() {
       <div className="min-h-screen bg-gradient-to-br from-primary-50 to-secondary-50">
         {/* Hero Section */}
         <section className="relative bg-gradient-to-r from-primary-600 to-secondary-600 text-white py-20">
+          {/* Mobile-only background image with overlay */}
+          <div
+            className="absolute inset-0 bg-cover bg-center bg-no-repeat sm:hidden"
+            style={{ backgroundImage: "url('/images/logo.jpg')" }}
+          />
+          <div className="absolute inset-0 bg-black/50 sm:hidden" />
           <div className="absolute inset-0 bg-black/20"></div>
           <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid md:grid-cols-2 gap-16 items-center">

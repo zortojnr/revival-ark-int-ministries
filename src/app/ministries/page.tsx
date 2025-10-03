@@ -207,14 +207,15 @@ export default function MinistriesPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-12">
             {ministries.map((ministry, index) => {
               const IconComponent = ministry.icon;
+              const isArk = ministry.href.includes('ark-of-hope');
               return (
                 <Link
                   key={index}
                   href={ministry.href}
-                  className="group bg-primary-50 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden transform hover:-translate-y-2 border border-primary-200"
+                  className="group bg-primary-50 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden transform hover:-translate-y-2 border border-primary-200 flex flex-col"
                 >
                   {/* Ministry Image */}
-                  <div className="relative h-56 bg-gradient-to-br from-primary-200 via-primary-100 to-primary-300 overflow-hidden">
+                  <div className={`relative h-56 bg-gradient-to-br from-primary-200 via-primary-100 to-primary-300 overflow-hidden ${isArk ? 'order-2 sm:order-none' : ''}`}>
                     <div className="absolute inset-0 flex items-center justify-center">
                       <IconComponent className="h-20 w-20 text-primary-600/30" />
                     </div>
@@ -229,7 +230,7 @@ export default function MinistriesPage() {
                   </div>
 
                   {/* Ministry Content */}
-                  <div className="p-8">
+                  <div className={`p-8 ${isArk ? 'order-1 sm:order-none' : ''}`}>
                     <h3 className="text-xl font-bold text-secondary-800 mb-4 group-hover:text-primary-600 transition-colors">
                       {ministry.title}
                     </h3>
