@@ -57,11 +57,12 @@ const impactStats: ImpactStat[] = [
 
 const testimonies: Testimony[] = [
   {
-    id: 3,
-    name: 'Grace Adebayo',
-    location: 'Ibadan, Nigeria',
-    testimony: 'Through the women\'s ministry, I found healing from past hurts and discovered my calling. I now lead a support group for women in my community.',
-    image: '/images/testimonies/grace-adebayo.jpg'
+    id: 1,
+    name: 'Joy Amana',
+    location: 'Abuja, Nigeria',
+    testimony:
+      "Through Pastor Aaron's ministry, God transformed my walk with Him. My prayer life was rekindled, my understanding of God’s Word deepened, and I’ve experienced genuine spiritual growth that continues to shape every area of my life.",
+    image: '/images/testimonies/joy-amana.jpg'
   }
 ];
 
@@ -174,7 +175,7 @@ export default function ImpactSection() {
             <SparklesIcon className="h-8 w-8 text-white" />
           </div>
           <h2 className="heading-1 mb-6">
-            Our Impact Across <span className="text-white font-bold">Nations</span>
+            Our Impact Across <span className="text-primary-500 font-bold">Nations</span>
           </h2>
           <p className="body-large max-w-4xl mx-auto">
             By God&apos;s grace, Revival Ark International Ministries continues to touch lives, 
@@ -201,15 +202,8 @@ export default function ImpactSection() {
                   transition: { duration: 0.2 }
                 }}
               >
-                <div className="relative mb-6">
-                  <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-primary-500 to-primary-600 text-white rounded-2xl shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:from-primary-600 group-hover:to-primary-700 border border-primary-400/20">
-                    <IconComponent className="h-10 w-10" />
-                  </div>
-                  {/* Floating decoration */}
-                  <div className="absolute -top-2 -right-2 w-6 h-6 bg-secondary-600 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-md">
-                    <StarIcon className="h-3 w-3 text-white" />
-                  </div>
-                </div>
+                {/* Icon positioned above stats without box */}
+                <IconComponent className="h-10 w-10 text-primary-600 mb-4 mx-auto" />
                 <div className="text-4xl lg:text-5xl font-bold bg-gradient-to-r from-secondary-900 to-primary-700 bg-clip-text text-transparent mb-2">
                   {formatNumber(animatedValue)}{stat.suffix}
                 </div>
@@ -317,6 +311,8 @@ export default function ImpactSection() {
         </motion.div>
 
         {/* Call to Action */}
+        {/* Removed per request: Be Part of the Story section */}
+        {/*
         <motion.div 
           className="text-center mt-16"
           variants={itemVariants}
@@ -353,6 +349,7 @@ export default function ImpactSection() {
             </motion.a>
           </div>
         </motion.div>
+        */}
       </div>
     </motion.section>
   );
