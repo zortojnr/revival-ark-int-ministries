@@ -32,7 +32,7 @@ module.exports = {
           500: '#6b7280',
           600: '#4b5563',
           700: '#374151',
-          800: '#333333', // Brand Charcoal Grey
+          800: '#36454F', // Brand Charcoal Grey
           900: '#1f2937',
         },
         // Accent - Gold

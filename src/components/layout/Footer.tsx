@@ -44,8 +44,7 @@ const socialLinks = [
   { name: 'Facebook', href: 'https://facebook.com/RevivalArkInternational', icon: 'facebook' },
   { name: 'Instagram', href: 'https://instagram.com/RevivalArkInternational', icon: 'instagram' },
   { name: 'YouTube', href: 'https://youtube.com/@RevivalArkInternational', icon: 'youtube' },
-  { name: 'Twitter', href: 'https://twitter.com/RevivalArkIntl', icon: 'twitter' },
-  { name: 'WhatsApp', href: '#', icon: 'whatsapp' },
+  { name: 'Twitter', href: 'https://twitter.com/RevivalArkIntl', icon: 'twitter' }
 ];
 
 export default function Footer() {
@@ -107,7 +106,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-neutral-800 text-white border-t border-neutral-700">
+    <footer className="bg-secondary-800 text-white border-t border-secondary-700">
       {/* Main Footer Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -206,13 +205,16 @@ export default function Footer() {
                 Subscribe to receive updates, sermons, and prayer requests.
               </p>
               <form onSubmit={handleNewsletterSubmit} className="space-y-3">
+                <label htmlFor="newsletter-email" className="font-body text-neutral-100 text-sm">
+                  Email address
+                </label>
                 <input
+                  id="newsletter-email"
                   type="email"
-                  placeholder="Enter your email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
-                  className="w-full px-4 py-2 bg-secondary-700 border border-secondary-600 rounded-md text-white placeholder-neutral-400 focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                  className="w-full px-4 py-2 bg-secondary-700 border border-secondary-600 rounded-md text-white focus:ring-2 focus:ring-primary-500 focus:border-transparent"
                 />
                 <button
                   type="submit"

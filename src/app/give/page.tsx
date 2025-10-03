@@ -244,7 +244,6 @@ export default function GivePage() {
                   step="0.01"
                   value={customAmount}
                   onChange={(e) => setCustomAmount(e.target.value)}
-                  placeholder="Enter amount"
                   className="w-full pl-12 pr-4 py-5 border-2 border-neutral-300 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500 text-lg-enhanced transition-all duration-300"
                 />
               </div>

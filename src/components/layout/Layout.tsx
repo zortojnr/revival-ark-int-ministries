@@ -79,10 +79,6 @@ export default function Layout({ children }: LayoutProps) {
       if (!allowedPaths.includes(pathToCheck)) {
         // Block navigation silently to maintain flow (no 404)
         e.preventDefault();
-        // Optional light feedback on mobile only
-        if (window.innerWidth <= 640) {
-          showInfo('Coming soon', 'This page is not yet available.');
-        }
       }
     };
 

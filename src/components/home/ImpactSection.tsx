@@ -159,9 +159,9 @@ export default function ImpactSection() {
     >
       {/* Background Decorations */}
       <div className="absolute inset-0 overflow-hidden z-background">
-        <div className="absolute -top-20 sm:-top-40 -right-20 sm:-right-40 w-40 sm:w-80 h-40 sm:h-80 bg-primary-200/40 rounded-full blur-3xl opacity-60"></div>
-        <div className="absolute -bottom-20 sm:-bottom-40 -left-20 sm:-left-40 w-40 sm:w-80 h-40 sm:h-80 bg-secondary-200/40 rounded-full blur-3xl opacity-60"></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-48 sm:w-96 h-48 sm:h-96 bg-gradient-to-r from-primary-100/30 to-secondary-100/30 rounded-full blur-3xl opacity-50"></div>
+        <div className="absolute -top-20 sm:-top-40 -right-20 sm:-right-40 w-40 sm:w-80 h-40 sm:h-80 bg-primary-200/40 rounded-full blur-xl sm:blur-2xl md:blur-3xl opacity-60"></div>
+        <div className="absolute -bottom-20 sm:-bottom-40 -left-20 sm:-left-40 w-40 sm:w-80 h-40 sm:h-80 bg-secondary-200/40 rounded-full blur-xl sm:blur-2xl md:blur-3xl opacity-60"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-48 sm:w-96 h-48 sm:h-96 bg-gradient-to-r from-primary-100/30 to-secondary-100/30 rounded-full blur-xl sm:blur-2xl md:blur-3xl opacity-50"></div>
       </div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-content">
@@ -251,8 +251,7 @@ export default function ImpactSection() {
           <div className="relative max-w-4xl mx-auto z-content">
             <div className="overflow-hidden rounded-2xl">
               <motion.div 
-                className="flex transition-transform duration-500 ease-in-out"
-                style={{ transform: `translateX(-${currentTestimony * 100}%)` }}
+                className="flex transition-transform duration-500 ease-in-out will-change-transform"
                 animate={{ x: -currentTestimony * 100 + '%' }}
                 transition={{ duration: 0.5, ease: "easeInOut" }}
               >
@@ -270,7 +269,7 @@ export default function ImpactSection() {
                             <UserGroupIcon className="h-12 w-12 lg:h-16 lg:w-16 text-white" />
                           </div>
                           {/* Decorative ring */}
-                          <div className="absolute inset-0 rounded-full border-4 border-white/30 animate-pulse"></div>
+                          <div className="absolute inset-0 rounded-full border-4 border-white/30 md:animate-pulse motion-reduce:animate-none"></div>
                         </div>
                         <div className="flex-1 text-center lg:text-left">
                           <blockquote className="body-large mb-6 italic relative text-white font-semibold">
