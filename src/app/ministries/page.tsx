@@ -28,7 +28,7 @@ export default function MinistriesPage() {
     {
       title: 'Orphan Care',
       description: 'Providing love, care, and hope to orphaned and vulnerable children.',
-      href: '/ministries/orphan-care',
+      href: '/ministries/ark-of-hope',
       icon: HeartIcon,
       color: 'bg-accent-100 text-accent-600',
       image: '/images/ministries/orphan-care.svg',
