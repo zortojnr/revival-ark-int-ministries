@@ -181,6 +181,26 @@ body {
   color: var(--secondary-900);
 }
 
+/* Utility variants used in pages */
+.heading-primary {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  color: var(--secondary-900);
+  line-height: var(--leading-tight);
+}
+
+.text-lg-enhanced {
+  font-size: var(--text-lg);
+  line-height: var(--leading-relaxed);
+  color: var(--secondary-700);
+}
+
+.text-body {
+  font-size: var(--text-base);
+  line-height: var(--leading-relaxed);
+  color: var(--secondary-700);
+}
+
 .heading-2 {
   font-family: var(--font-heading);
   font-size: var(--text-4xl);
@@ -466,12 +486,19 @@ body {
   .heading-1 { font-size: var(--text-4xl); }
   .heading-2 { font-size: var(--text-3xl); }
   .heading-3 { font-size: var(--text-2xl); }
-  
+
+  /* Improve readability of primary headings and body text on small screens */
+  .heading-primary { font-size: var(--text-3xl); }
+  .text-lg-enhanced { font-size: var(--text-base); line-height: var(--leading-relaxed); }
+  .text-body { font-size: var(--text-sm); line-height: var(--leading-relaxed); }
+
+  /* Increase touch target padding subtly without changing visual layout */
+  a, button { min-height: var(--tap-target-min); }
+
   .section-padding {
     padding-top: var(--space-12);
     padding-bottom: var(--space-12);
   }
-  
   .container-fluid,
   .container {
     padding-left: var(--space-3);
@@ -482,7 +509,10 @@ body {
 @media (max-width: 480px) {
   .heading-1 { font-size: var(--text-3xl); }
   .heading-2 { font-size: var(--text-2xl); }
-  
+  .heading-primary { font-size: var(--text-2xl); }
+  .text-lg-enhanced { font-size: var(--text-sm); }
+  .text-body { font-size: var(--text-xs); }
+
   .btn-cta {
     padding: var(--space-3) var(--space-6);
     font-size: var(--text-base);
@@ -604,3 +634,7 @@ main {
   padding-left: env(safe-area-inset-left);
   padding-right: env(safe-area-inset-right);
 }
+
+/* Responsive media */
+img, svg, video, canvas { max-width: 100%; height: auto; }
+iframe { max-width: 100%; }
