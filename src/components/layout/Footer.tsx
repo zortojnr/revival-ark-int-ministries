@@ -106,7 +106,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-secondary-900 text-white border-t border-secondary-800">
+    <footer className="bg-secondary-800 text-white border-t border-secondary-700">
       {/* Main Footer Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -282,7 +282,7 @@ export default function Footer() {
       </div>
 
       {/* Bottom Bar */}
-      <div className="bg-secondary-900 py-4">
+      <div className="bg-secondary-800 py-4">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row justify-between items-center text-sm text-white">
             <div className="mb-2 md:mb-0">
