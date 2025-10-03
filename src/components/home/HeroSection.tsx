@@ -278,6 +278,7 @@ export default function HeroSection() {
                 >
                   <Link
                     href={currentSlideData.buttonLink}
+                    onClick={(e) => handleLinkGuard(e, currentSlideData.buttonLink)}
                     className="inline-flex items-center justify-center px-10 py-4 bg-white hover:bg-slate-50 text-slate-800 font-bold rounded-xl transition-all duration-300 shadow-2xl hover:shadow-3xl text-lg border-2 border-white group"
                   >
                     {currentSlideData.buttonText}
@@ -299,8 +300,8 @@ export default function HeroSection() {
 
 
       {/* Interactive Buttons for Each Slide - Repositioned */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20">
-        <div className="flex flex-wrap justify-center gap-3">
+      <div className="absolute left-1/2 transform -translate-x-1/2 z-40" style={{ bottom: 'calc(2rem + env(safe-area-inset-bottom))' }}>
+        <div className="flex flex-wrap justify-center gap-3 pointer-events-auto">
           {slides.map((slide, index) => (
             <motion.button
               key={slide.id}
@@ -320,7 +321,7 @@ export default function HeroSection() {
       </div>
 
       {/* Progress Bar - Minimal Design */}
-      <div className="absolute bottom-0 left-0 w-full h-0.5 bg-white/10 z-20">
+      <div className="absolute bottom-0 left-0 w-full h-0.5 bg-white/10 z-20 pointer-events-none">
         <motion.div
           className="h-full bg-white/80 shadow-sm"
           initial={{ width: "0%" }}
@@ -331,7 +332,7 @@ export default function HeroSection() {
 
       {/* Scroll Indicator - Repositioned */}
       <motion.div 
-        className="absolute bottom-32 right-6 z-20"
+        className="absolute bottom-32 right-6 z-20 pointer-events-none"
         animate={{ y: [0, 8, 0] }}
         transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
       >
@@ -343,3 +344,13 @@ export default function HeroSection() {
     </section>
   );
 }
+
+
+
+  // Whitelist existing routes to prevent navigation to pages not yet added
+  const allowedPaths = new Set<string>(['/ministries', '/ministries/evangelism-missions', '/get-involved', '/give']);
+  const handleLinkGuard = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    if (!allowedPaths.has(href)) {
+      e.preventDefault();
+    }
+  };

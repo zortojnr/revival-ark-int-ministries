@@ -115,7 +115,7 @@ export default function YouthMinistryPage() {
             <div className="grid md:grid-cols-2 gap-16 items-center">
               <div>
                 <h1 className="text-3xl md:text-4xl font-bold heading-primary mb-6">
-                  Youth Ministry
+                  Youth Network
                 </h1>
                 <p className="text-lg md:text-xl text-primary-100 mb-8">
                   &quot;Don&apos;t let anyone look down on you because you are young, but set an example for the believers in speech, in conduct, in love, in faith and in purity.&quot;
@@ -358,7 +358,7 @@ export default function YouthMinistryPage() {
         <section id="join" className="py-20 bg-gradient-to-r from-primary-600 to-secondary-600 text-white">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 className="text-2xl md:text-3xl font-bold heading-primary mb-8">
-              Join Our Youth Ministry
+              Join Youth Network
             </h2>
             <p className="text-lg text-primary-100 mb-12">
               Are you ready to grow in your faith, discover your purpose, and make a difference? 
@@ -390,7 +390,7 @@ export default function YouthMinistryPage() {
                 href="/contact"
                 className="bg-white text-primary-600 px-8 py-4 rounded-lg font-semibold hover:bg-primary-50 transition-colors text-center"
               >
-                Join Youth Ministry
+                Join Youth Network
               </Link>
               <Link
                 href="/events"

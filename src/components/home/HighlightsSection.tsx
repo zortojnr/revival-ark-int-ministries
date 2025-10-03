@@ -6,6 +6,14 @@ import Image from 'next/image';
 import { motion, easeOut } from 'framer-motion';
 import { PlayIcon, ArrowRightIcon, SparklesIcon } from '@heroicons/react/24/outline';
 
+// Whitelist existing routes to prevent navigation to pages not yet added
+const allowedPaths = new Set<string>(['/get-involved', '/give', '/ministries']);
+function handleLinkGuard(e: React.MouseEvent<HTMLAnchorElement>, href: string) {
+  if (!allowedPaths.has(href)) {
+    e.preventDefault();
+  }
+}
+
 interface Sermon {
   id: number;
   title: string;
@@ -94,7 +102,7 @@ export default function HighlightsSection() {
 
 
   return (
-    <section className="section-padding bg-gradient-to-b from-primary-50 to-white relative overflow-hidden">
+    <section className="section-padding bg-gradient-to-b from-primary-50 to-white relative sm:overflow-hidden overflow-visible pb-24 sm:pb-28">
       {/* Background Decorations */}
       <div className="absolute inset-0 overflow-hidden z-background">
         <div className="absolute -top-40 -right-40 w-80 h-80 bg-primary-200/30 rounded-full opacity-20 blur-3xl"></div>
@@ -246,7 +254,7 @@ export default function HighlightsSection() {
 
         {/* Call to Action */}
         <motion.div 
-          className="mt-24"
+          className="mt-24 mb-8 sm:mb-12"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
@@ -286,6 +294,7 @@ export default function HighlightsSection() {
               >
                 <Link
                   href="/get-involved"
+                  onClick={(e) => handleLinkGuard(e, '/get-involved')}
                   className="inline-flex items-center justify-center px-8 py-4 bg-white hover:bg-gray-100 text-black font-bold rounded-xl transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-2xl"
                 >
                   Get Involved
@@ -293,6 +302,7 @@ export default function HighlightsSection() {
                 </Link>
                 <Link
                   href="/contact"
+                  onClick={(e) => handleLinkGuard(e, '/contact')}
                   className="inline-flex items-center justify-center px-8 py-4 bg-transparent hover:bg-white/10 text-white font-bold rounded-xl transition-all duration-300 transform hover:scale-105 border-2 border-white hover:border-white backdrop-blur-sm"
                 >
                   Contact Us

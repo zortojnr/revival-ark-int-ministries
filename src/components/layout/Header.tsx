@@ -21,12 +21,12 @@ const navigation = [
     href: '/ministries',
     submenu: [
       { name: 'Revival Crusades', href: '/ministries/revival-crusades' },
-      { name: 'Youth Network', href: '/ministries/youth-network' },
+      { name: 'Youth Network', href: '/ministries/youth-ministry' },
       { name: "Women's Ministry", href: '/ministries/womens-ministry' },
-      { name: 'Ark Kids', href: '/ministries/ark-kids' },
+      { name: 'Ark Kids', href: '/ministries/children-ministry' },
       { name: 'Ark of Hope (Orphans)', href: '/ministries/ark-of-hope' },
       { name: 'Media Ministry', href: '/ministries/media' },
-      { name: 'Missions', href: '/ministries/missions' },
+      { name: 'Missions', href: '/ministries/evangelism-missions' },
       { name: 'Prayer Ministry', href: '/ministries/prayer' },
       { name: 'Leadership Development', href: '/ministries/leadership' },
       { name: 'Revival Academy', href: '/ministries/academy' },
@@ -54,13 +54,13 @@ export default function Header() {
           {/* Logo */}
           <div className="flex items-center">
             <Link href="/" className="flex items-center space-x-3">
-              <div className="w-12 h-12 relative flex-shrink-0">
+              <div className="w-12 h-12 relative flex-shrink-0 rounded-full overflow-hidden">
                 <Image
                   src="/images/logo.jpg"
                   alt="Revival Ark International Logo"
                   width={48}
                   height={48}
-                  className="rounded-full object-cover block"
+                  className="object-cover block"
                   priority
                 />
               </div>
@@ -128,7 +128,7 @@ export default function Header() {
 
       {/* Mobile Navigation */}
       {mobileMenuOpen && (
-        <div className="lg:hidden bg-white border-t border-gray-200 shadow-lg">
+        <div className="lg:hidden bg-white border-t border-gray-200 shadow-lg max-h-[calc(100vh-72px)] overflow-y-auto">
           <div className="px-4 py-6 space-y-4">
             {navigation.map((item) => (
               <div key={item.name}>

@@ -4,10 +4,10 @@ export default function EvangelismMissionsPage() {
     <Layout>
       <div className="min-h-screen bg-neutral-50 py-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-4xl font-bold text-secondary-900 mb-8">Evangelism & Missions</h1>
+          <h1 className="text-4xl font-bold text-secondary-900 mb-8">Missions</h1>
           
           <p className="text-lg text-secondary-700 mb-6">
-            Our Evangelism & Missions ministry is committed to sharing the Gospel both locally and globally. 
+            Our Missions ministry is committed to sharing the Gospel locally and globally.
             We believe in the Great Commission and actively work to spread God&apos;s love to all nations.
           </p>
   

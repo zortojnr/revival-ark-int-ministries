@@ -152,7 +152,7 @@ export default function ImpactSection() {
   return (
     <motion.section 
       ref={sectionRef} 
-      className="section-padding bg-gradient-to-br from-primary-50/20 via-white to-secondary-50/30 overflow-hidden"
+      className="section-padding bg-gradient-to-br from-primary-50/20 via-white to-secondary-50/30 overflow-visible sm:overflow-hidden pb-20 sm:pb-24"
       initial="hidden"
       animate={controls}
       variants={containerVariants}

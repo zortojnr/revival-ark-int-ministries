@@ -150,7 +150,7 @@ export default function ChildrenMinistryPage() {
             <div className="grid md:grid-cols-2 gap-16 items-center">
               <div>
                 <h1 className="text-3xl md:text-4xl font-bold heading-primary mb-6">
-                  Children&apos;s Ministry
+                  Ark Kids
                 </h1>
                 <p className="text-lg md:text-xl text-accent-100 mb-8">
                   &quot;Let the little children come to me, and do not hinder them, for the kingdom of heaven belongs to such as these.&quot;
@@ -163,7 +163,7 @@ export default function ChildrenMinistryPage() {
                     href="/contact"
                     className="bg-white text-accent-600 px-8 py-4 rounded-lg font-semibold hover:bg-accent-50 transition-colors text-center"
                   >
-                    Join Children&apos;s Ministry
+                    Join Ark Kids
                   </Link>
                   <Link
                     href="/events"

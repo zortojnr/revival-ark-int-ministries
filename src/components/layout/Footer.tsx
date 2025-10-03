@@ -20,11 +20,11 @@ const footerNavigation = {
   ],
   ministries: [
     { name: 'Revival Crusades', href: '/ministries/revival-crusades' },
-    { name: 'Youth Network', href: '/ministries/youth-network' },
-    { name: 'Ark Kids', href: '/ministries/ark-kids' },
+    { name: 'Youth Network', href: '/ministries/youth-ministry' },
+    { name: 'Ark Kids', href: '/ministries/children-ministry' },
     { name: 'Ark of Hope', href: '/ministries/ark-of-hope' },
     { name: 'Women\'s Ministry', href: '/ministries/womens-ministry' },
-    { name: 'Missions', href: '/ministries/missions' },
+    { name: 'Missions', href: '/ministries/evangelism-missions' },
   ],
   resources: [
     { name: 'Sermons', href: 'https://www.youtube.com/@AaronGassy' },
