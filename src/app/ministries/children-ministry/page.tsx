@@ -1,10 +1,9 @@
 'use client';
 
 import { useState } from 'react';
-import Image from 'next/image';
+// Removed unused Image import
 import Link from 'next/link';
 import { 
-  HeartIcon, 
   UserGroupIcon, 
   AcademicCapIcon,
   SparklesIcon,

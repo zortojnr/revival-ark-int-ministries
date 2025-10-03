@@ -1,3 +1,5 @@
+const path = require('path');
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
@@ -10,7 +12,12 @@ const nextConfig = {
       },
     ],
   },
+  // Ensure Next.js correctly identifies the workspace root to avoid build warnings
+  outputFileTracingRoot: path.join(__dirname),
+  // Temporarily ignore TypeScript build errors to avoid Windows OOM crash during type checking
+  typescript: {
+    ignoreBuildErrors: false,
+  },
+};
 
-}
-
-module.exports = nextConfig
+module.exports = nextConfig;

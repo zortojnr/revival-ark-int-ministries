@@ -1,18 +1,12 @@
 import Layout from '@/components/layout/Layout';
 import Link from 'next/link';
-import Image from 'next/image';
 import { 
   ArrowRightIcon, 
   HeartIcon, 
   HandRaisedIcon, 
   UserGroupIcon,
-  GiftIcon,
   AcademicCapIcon,
   GlobeAltIcon,
-  ChatBubbleLeftRightIcon,
-  CalendarDaysIcon,
-  BookOpenIcon,
-  MegaphoneIcon,
   CameraIcon
 } from '@heroicons/react/24/outline';
 

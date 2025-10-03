@@ -43,9 +43,9 @@ export default function Header() {
   return (
     <header className="bg-white shadow-lg fixed top-0 left-0 right-0 z-50 border-b border-primary-100">
       {/* Skip Link for Accessibility */}
-      <a href="#main-content" className="skip-link">
+      <Link href="#main-content" className="skip-link">
         Skip to main content
-      </a>
+      </Link>
 
       {/* Main Header */}
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
