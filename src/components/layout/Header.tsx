@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { ChevronDownIcon, ChevronRightIcon } from '@heroicons/react/24/outline';
 
 const navigation = [
   { name: 'Home', href: '/' },
@@ -53,23 +54,23 @@ export default function Header() {
           {/* Logo */}
           <div className="flex items-center">
             <Link href="/" className="flex items-center space-x-3">
-              <div className="w-12 h-12 relative">
+              <div className="w-12 h-12 relative flex-shrink-0">
                 <Image
                   src="/images/logo.jpg"
                   alt="Revival Ark International Logo"
                   width={48}
                   height={48}
-                  className="rounded-full object-cover"
+                  className="rounded-full object-cover block"
                   priority
                 />
               </div>
               <div className="hidden sm:block">
-                <h1 className="font-heading text-lg font-bold text-secondary-800">
+                <h1 className="font-heading text-lg font-bold text-secondary-800 leading-tight">
                   Revival Ark International Ministries
                 </h1>
               </div>
               <div className="sm:hidden">
-                <h1 className="font-heading text-base font-bold text-secondary-800">
+                <h1 className="font-heading text-base font-bold text-secondary-800 leading-tight">
                   Revival Ark
                 </h1>
               </div>
@@ -82,12 +83,17 @@ export default function Header() {
               <div key={item.name} className="relative group">
                 <Link
                   href={item.href}
-                  className="font-body text-secondary-800 hover:text-secondary-600 font-medium transition-colors duration-200 py-2 text-sm"
+                  className="font-body text-secondary-800 hover:text-secondary-600 font-medium transition-colors duration-200 py-2 text-sm inline-flex items-center"
                 >
-                  {item.name}
+                  <span className="inline-flex items-center">
+                    {item.name}
+                    {item.submenu && (
+                      <ChevronDownIcon className="w-4 h-4 ml-1 text-secondary-600 transition-transform duration-200 group-hover:rotate-180" />
+                    )}
+                  </span>
                 </Link>
                 {item.submenu && (
-                  <div className="absolute left-0 mt-2 w-64 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 border border-gray-200">
+                  <div className="absolute left-0 mt-2 w-64 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible group-focus-within:opacity-100 group-focus-within:visible transition-all duration-200 z-50 border border-gray-200">
                     <div className="py-2">
                       {item.submenu.map((subItem) => (
                         <Link
@@ -128,10 +134,13 @@ export default function Header() {
               <div key={item.name}>
                 <Link
                   href={item.href}
-                  className="block text-secondary-700 hover:text-secondary-800 font-medium py-2 px-3 rounded-md hover:bg-gray-50 transition-all duration-200"
+                  className="flex items-center justify-between text-secondary-700 hover:text-secondary-800 font-medium py-2 px-3 rounded-md hover:bg-gray-50 transition-all duration-200"
                   onClick={() => setMobileMenuOpen(false)}
                 >
-                  {item.name}
+                  <span>{item.name}</span>
+                  {item.submenu && (
+                    <ChevronRightIcon className="w-4 h-4 text-secondary-500" />
+                  )}
                 </Link>
                 {item.submenu && (
                   <div className="ml-4 mt-2 space-y-2 pl-4 border-l-2 border-gray-200">
