@@ -8,6 +8,26 @@ export default function FounderSection() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const images = ['/images/founder.jpg', '/images/2.jpg'];
 
+  // Dynamic, continuously incrementing counters
+  const [yearsCount, setYearsCount] = useState(20);
+  const [livesCount, setLivesCount] = useState(1000);
+  const [armsCount, setArmsCount] = useState(10);
+
+  useEffect(() => {
+    // Years: slow incremental update
+    const yearsTimer = setInterval(() => setYearsCount((prev) => prev + 1), 60000);
+    // Lives transformed: steady visible increment
+    const livesTimer = setInterval(() => setLivesCount((prev) => prev + 7), 1000);
+    // Ministry arms: very slow incremental update
+    const armsTimer = setInterval(() => setArmsCount((prev) => prev + 1), 45000);
+
+    return () => {
+      clearInterval(yearsTimer);
+      clearInterval(livesTimer);
+      clearInterval(armsTimer);
+    };
+  }, []);
+
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
