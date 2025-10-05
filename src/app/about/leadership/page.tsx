@@ -139,32 +139,32 @@ export default function LeadershipPage() {
 
           <div className="grid lg:grid-cols-2 gap-12">
             {seniorLeadership.map((leader, index) => (
-              <div key={index} className="bg-primary-100 rounded-2xl p-8 shadow-lg border border-primary-200">
+              <div key={index} className="group relative overflow-hidden rounded-2xl p-8 text-center bg-emerald-700 text-white shadow-lg border border-white/10 motion-safe:transition-transform motion-safe:duration-300 hover:bg-emerald-600 hover:shadow-xl motion-safe:hover:-translate-y-1">
                 <div className="text-center mb-6">
                   <div className="relative w-32 h-32 mx-auto mb-4">
-                    <div className="w-full h-full bg-primary-500 rounded-full flex items-center justify-center">
-                      <UserGroupIcon className="h-16 w-16 text-white" />
+                    <div className="w-full h-full bg-white rounded-full flex items-center justify-center shadow-inner ring-4 ring-white/10">
+                      <UserGroupIcon className="h-16 w-16 text-emerald-700" />
                     </div>
                   </div>
-                  <h3 className="text-2xl font-bold text-secondary-900 mb-2">
+                  <h3 className="text-2xl font-bold text-white mb-2">
                     {leader.name}
                   </h3>
-                  <p className="text-lg text-primary-700 font-semibold mb-4">
+                  <p className="text-lg text-white font-semibold mb-4">
                     {leader.title}
                   </p>
                 </div>
 
-                <p className="text-secondary-700 leading-relaxed mb-6 text-center">
+                <p className="text-white/90 leading-relaxed mb-6 text-center">
                   {leader.bio}
                 </p>
 
                 <div className="mb-6">
-                  <h4 className="text-sm font-semibold text-secondary-900 mb-3 text-center">
+                  <h4 className="text-sm font-semibold text-white mb-3 text-center">
                     Ministry Specialties
                   </h4>
                   <div className="flex flex-wrap justify-center gap-2">
                     {leader.specialties.map((specialty, idx) => (
-                      <span key={idx} className="px-3 py-1 bg-primary-600 text-white text-sm rounded-full">
+                      <span key={idx} className="px-3 py-1 bg-white/20 text-white text-sm rounded-full border border-white/30">
                         {specialty}
                       </span>
                     ))}
@@ -174,14 +174,14 @@ export default function LeadershipPage() {
                 <div className="flex justify-center space-x-4">
                   <a
                     href={`mailto:${leader.email}`}
-                    className="inline-flex items-center px-4 py-2 bg-primary-600 hover:bg-primary-700 text-white rounded-lg transition-colors"
+                    className="inline-flex items-center px-4 py-2 bg-white hover:bg-white/90 text-emerald-700 rounded-lg border border-white/20 motion-safe:transition-colors"
                   >
                     <EnvelopeIcon className="h-4 w-4 mr-2" />
                     Email
                   </a>
                   <a
                     href={`tel:${leader.phone}`}
-                    className="inline-flex items-center px-4 py-2 bg-secondary-600 hover:bg-secondary-700 text-white rounded-lg transition-colors"
+                    className="inline-flex items-center px-4 py-2 bg-white hover:bg-white/90 text-emerald-700 rounded-lg border border-white/20 motion-safe:transition-colors"
                   >
                     <PhoneIcon className="h-4 w-4 mr-2" />
                     Call
@@ -209,23 +209,23 @@ export default function LeadershipPage() {
             {departmentHeads.map((leader, index) => {
               const IconComponent = leader.icon;
               return (
-                <div key={index} className="bg-white rounded-xl shadow-lg p-8 text-center hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                <div key={index} className="group relative overflow-hidden rounded-xl p-8 text-center bg-emerald-700 text-white shadow-lg border border-white/10 motion-safe:transition-transform motion-safe:duration-300 hover:bg-emerald-600 hover:shadow-xl motion-safe:hover:-translate-y-1">
                   <div className="relative w-28 h-28 mx-auto mb-6">
-                    <div className="w-full h-full bg-gradient-to-br from-accent-100 to-accent-200 rounded-full flex items-center justify-center shadow-inner">
-                      <IconComponent className="h-14 w-14 text-accent-600" />
+                    <div className="w-full h-full bg-white rounded-full flex items-center justify-center shadow-inner ring-4 ring-white/10">
+                      <IconComponent className="h-14 w-14 text-emerald-700" />
                     </div>
                   </div>
                   
-                  <h3 className="text-xl font-bold text-secondary-900 mb-3">
+                  <h3 className="text-xl font-bold text-white mb-3">
                     {leader.name}
                   </h3>
-                  <p className="text-primary-600 font-semibold mb-2">
+                  <p className="text-white font-semibold mb-2">
                     {leader.title}
                   </p>
-                  <p className="text-sm text-secondary-500 mb-6">
+                  <p className="text-sm text-white/80 mb-6 uppercase tracking-wide">
                     {leader.department}
                   </p>
-                  <p className="text-secondary-600 text-sm leading-relaxed">
+                  <p className="text-white/90 text-base leading-relaxed font-medium">
                     {leader.bio}
                   </p>
                 </div>
@@ -236,13 +236,13 @@ export default function LeadershipPage() {
       </section>
 
       {/* Board of Directors */}
-      <section className="py-16 lg:py-24 bg-primary-100">
+      <section className="py-12 md:py-14 lg:py-16 bg-primary-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
+          <div className="text-center mb-14 lg:mb-16">
             <h2 className="text-3xl lg:text-4xl font-bold text-secondary-900 mb-4">
               Board of Directors
             </h2>
-            <div className="w-24 h-1 bg-primary-500 mx-auto mb-6"></div>
+            <div className="w-24 h-1 bg-primary-500 mx-auto mb-5 lg:mb-6"></div>
             <p className="text-lg text-secondary-600 max-w-2xl mx-auto">
               Our board provides governance, accountability, and strategic guidance for the ministry.
             </p>
@@ -250,17 +250,17 @@ export default function LeadershipPage() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {boardMembers.map((member, index) => (
-              <div key={index} className="bg-primary-50 rounded-xl p-6 text-center border border-primary-200">
-                <div className="w-16 h-16 bg-primary-500 rounded-full mx-auto mb-4 flex items-center justify-center">
-                  <UserGroupIcon className="h-8 w-8 text-white" />
+              <div key={index} className="group relative overflow-hidden rounded-xl p-6 text-center bg-emerald-700 text-white shadow-lg border border-white/10 motion-safe:transition-transform motion-safe:duration-300 hover:bg-emerald-600 hover:shadow-xl motion-safe:hover:-translate-y-1">
+                <div className="w-16 h-16 bg-white rounded-full mx-auto mb-4 flex items-center justify-center shadow-inner ring-4 ring-white/10">
+                  <UserGroupIcon className="h-8 w-8 text-emerald-700" />
                 </div>
-                <h3 className="text-lg font-bold text-secondary-900 mb-2">
+                <h3 className="text-lg font-bold text-white mb-2">
                   {member.name}
                 </h3>
-                <p className="text-primary-700 font-semibold mb-1">
+                <p className="text-white font-semibold mb-1">
                   {member.title}
                 </p>
-                <p className="text-sm text-secondary-600">
+                <p className="text-sm text-white/80">
                   {member.profession}
                 </p>
               </div>
@@ -270,10 +270,10 @@ export default function LeadershipPage() {
       </section>
 
       {/* Leadership Principles */}
-      <section className="py-16 lg:py-24 bg-gradient-to-r from-primary-600 to-primary-700 text-white">
+      <section className="py-12 md:py-14 lg:py-16 bg-gradient-to-r from-primary-600 to-primary-700 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl lg:text-4xl font-bold mb-6">
+          <div className="text-center mb-10 lg:mb-12">
+            <h2 className="text-3xl lg:text-4xl font-bold mb-5 lg:mb-6">
               Our Leadership Principles
             </h2>
             <p className="text-xl text-primary-100 max-w-3xl mx-auto leading-relaxed">
@@ -293,7 +293,7 @@ export default function LeadershipPage() {
             </div>
             
             <div className="text-center">
-              <div className="inline-flex items-center justify-center w-16 h-16 bg-white/20 rounded-full mb-4">
+              <div className="inline-flex items-center justifycenter w-16 h-16 bg-white/20 rounded-full mb-4">
                 <BookOpenIcon className="h-8 w-8" />
               </div>
               <h3 className="text-xl font-bold mb-3">Biblical Integrity</h3>
@@ -316,12 +316,12 @@ export default function LeadershipPage() {
       </section>
 
       {/* Call to Action */}
-      <section className="py-16 lg:py-24 bg-secondary-900 text-white">
+      <section className="py-10 md:py-12 lg:py-14 bg-secondary-900 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl lg:text-4xl font-bold mb-6">
             Join Our Leadership Team
           </h2>
-          <p className="text-xl text-secondary-200 mb-8 max-w-2xl mx-auto">
+          <p className="text-xl text-white/90 leading-relaxed mb-8 max-w-2xl mx-auto">
             God is raising up leaders for this generation. If you feel called to serve 
             in leadership, we&apos;d love to hear from you.
           </p>

@@ -1,5 +1,7 @@
+'use client'
 import Layout from '@/components/layout/Layout';
 import Link from 'next/link';
+import Image from 'next/image'
 import { 
   HeartIcon, 
   GlobeAltIcon, 
@@ -8,6 +10,7 @@ import {
   SparklesIcon,
   ArrowRightIcon 
 } from '@heroicons/react/24/outline';
+import { useEffect, useRef, useState } from 'react'
 
 export default function WhoWeArePage() {
   const coreValues = [
@@ -45,7 +48,7 @@ export default function WhoWeArePage() {
     },
     {
       year: '2012',
-      title: 'First Orphanage',
+      title: 'First Orphanage Outreach',
       description: 'Established our first children\'s home, providing care for vulnerable children.'
     },
     {
@@ -70,35 +73,58 @@ export default function WhoWeArePage() {
     }
   ];
 
+  // Scroll-triggered animation refs and visibility state for Our Journey cards
+  const itemRefs = useRef<Array<HTMLDivElement | null>>([]);
+  const [visibleIdxs, setVisibleIdxs] = useState<number[]>([]);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const idxAttr = (entry.target as HTMLElement).getAttribute('data-index');
+          const idx = idxAttr ? parseInt(idxAttr, 10) : -1;
+          if (idx >= 0) {
+            setVisibleIdxs((prev) => (prev.includes(idx) ? prev : [...prev, idx]));
+          }
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.2 });
+
+    itemRefs.current.forEach((el, idx) => {
+      if (el) {
+        el.setAttribute('data-index', String(idx));
+        observer.observe(el);
+      }
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="relative py-20 lg:py-32 bg-gradient-to-br from-primary-600 via-primary-700 to-secondary-800 text-white overflow-hidden">
-        <div className="absolute inset-0 bg-black/30"></div>
+      <section className="relative py-20 lg:py-32 text-white overflow-hidden bg-[#50C878]">
+        <div className="hidden"></div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h1 className="text-4xl lg:text-6xl font-bold mb-6">
-                Who We Are
-              </h1>
-              <p className="text-xl lg:text-2xl text-primary-100 leading-relaxed font-serif italic mb-8">
-                &quot;And he said unto them, Go ye into all the world, and preach the gospel to every creature.&quot; 
-                - Mark 16:15
+              <h1 className="text-4xl lg:text-6xl font-bold mb-6">Who We Are</h1>
+              <p className="text-xl lg:text-2xl text-white/90 leading-relaxed font-serif italic mb-8">
+                &quot;And he said unto them, Go ye into all the world, and preach the gospel to every creature.&quot; - Mark 16:15
               </p>
               <p className="text-lg text-white/90 leading-relaxed">
-                We are a people called by God to be vessels of His love, carriers of His presence, 
-                and instruments of His revival in this generation.
+                We are a people called by God to be vessels of His love, carriers of His presence, and instruments of His revival in this generation.
               </p>
             </div>
             <div className="relative">
-              <div className="aspect-square bg-white/10 rounded-2xl backdrop-blur-sm border border-white/20 flex items-center justify-center">
-                <SparklesIcon className="h-32 w-32 text-white/60" />
+              <div className="relative w-full h-64 md:h-80 lg:h-96 bg-white/10 rounded-2xl backdrop-blur-sm border border-white/20">
+                <Image src="/images/logo.jpg" alt="Revival Ark Logo" fill className="object-contain p-6" sizes="(min-width: 1024px) 480px, (min-width: 768px) 400px, 300px" />
               </div>
             </div>
           </div>
         </div>
       </section>
-
       {/* Mission & Vision */}
       <section className="py-16 lg:py-24 bg-primary-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -186,7 +212,7 @@ export default function WhoWeArePage() {
       </section>
 
       {/* Our Story/Timeline */}
-      <section className="py-16 lg:py-24 bg-primary-100">
+      <section id="our-journey" className="py-16 lg:py-24 bg-primary-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-4xl font-bold text-secondary-800 mb-4">
@@ -209,19 +235,34 @@ export default function WhoWeArePage() {
                   <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-primary-500 rounded-full border-4 border-primary-50 shadow-lg hidden lg:block z-10"></div>
                   
                   {/* Content */}
-                  <div className={`w-full lg:w-5/12 ${index % 2 === 0 ? 'lg:pr-8' : 'lg:pl-8'}`}>
-                    <div className="bg-primary-50 rounded-xl p-6 shadow-lg border border-primary-200">
-                      <div className="flex items-center mb-3">
-                        <span className="inline-flex items-center px-3 py-1 bg-primary-500 text-white text-sm font-semibold rounded-full">
-                          {milestone.year}
-                        </span>
-                      </div>
-                      <h3 className="text-xl font-bold text-secondary-900 mb-2">
-                        {milestone.title}
-                      </h3>
-                      <p className="text-secondary-700 leading-relaxed">
-                        {milestone.description}
-                      </p>
+                  <div
+                     ref={(el) => { itemRefs.current[index] = el; }}
+                     className={`w-full lg:w-5/12 motion-safe:transform-gpu motion-safe:transition-all motion-safe:duration-700 motion-safe:ease-out motion-reduce:transition-none motion-reduce:transform-none ${visibleIdxs.includes(index) ? 'opacity-100 translate-x-0 scale-100' : `${index % 2 === 0 ? 'opacity-0 translate-x-12 scale-95' : 'opacity-0 -translate-x-12 scale-95'}`} ${index % 2 === 0 ? 'lg:pr-8' : 'lg:pl-8'}`}
+                   >
+                     <div className="group bg-white text-secondary-900 rounded-xl p-6 shadow-lg border border-primary-200 transition-transform motion-safe:duration-300 motion-safe:ease-out hover:shadow-xl hover:-translate-y-1 hover:scale-[1.01] motion-reduce:hover:transform-none focus-within:shadow-xl">
+                       <div className="flex items-center mb-3">
+                         <span className="inline-flex items-center px-3 py-1 bg-primary-500 text-white text-sm font-semibold rounded-full transition-transform motion-safe:duration-300 motion-safe:ease-out group-hover:scale-105">
+                           {milestone.year}
+                         </span>
+                       </div>
+                       <h3 className="text-xl font-bold text-secondary-900 mb-2">
+                         {milestone.title}
+                       </h3>
+                       <p className="text-secondary-700 leading-relaxed">
+                         {milestone.description}
+                       </p>
+                       {milestone.title.toLowerCase().includes('orphanage outreach') && (
+                         <div className="mt-4">
+                           <Link
+                             href="/ministries/ark-of-hope"
+                             aria-label="Check Gallery for Ark of Hope"
+                            className="inline-flex items-center px-4 py-2 bg-white text-primary-700 font-semibold rounded-lg hover:bg-neutral-100 transition-colors motion-safe:duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-700 focus-visible:ring-offset-2 focus-visible:ring-offset-white"
+                            >
+                            Check Gallery
+                            <ArrowRightIcon className="ml-2 h-4 w-4" />
+                          </Link>
+                        </div>
+                      )}
                     </div>
                   </div>
                   
@@ -247,14 +288,16 @@ export default function WhoWeArePage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/about/leadership"
-              className="inline-flex items-center px-8 py-4 bg-primary-600 hover:bg-primary-700 text-white font-semibold rounded-lg transition-colors transform hover:scale-105"
+              aria-label="Meet Our Leadership"
+              className="inline-flex items-center px-8 py-4 bg-primary-600 hover:bg-primary-700 text-white font-semibold rounded-lg transition-colors transform hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-primary-700"
             >
               Meet Our Leadership
               <ArrowRightIcon className="ml-2 h-4 w-4" />
             </Link>
             <Link
               href="/get-involved"
-              className="inline-flex items-center px-8 py-4 bg-white text-secondary-900 font-semibold rounded-lg hover:bg-neutral-100 transition-colors transform hover:scale-105"
+              aria-label="Get Involved"
+              className="inline-flex items-center px-8 py-4 bg-white text-secondary-900 font-semibold rounded-lg hover:bg-neutral-100 transition-colors transform hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary-900 focus-visible:ring-offset-2 focus-visible:ring-offset-white"
             >
               Get Involved
             </Link>

@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { 
   HeartIcon, 
@@ -75,71 +75,45 @@ export default function YouthMinistryPage() {
     }
   ];
 
-  const testimonials = [
-    {
-      name: 'Grace Emeka',
-      age: 17,
-      testimony: 'The evangelism training gave me boldness to share the Gospel with my friends at school.',
-      role: 'Evangelism Team'
-    }
-  ];
+  const testimonials: { name: string; age?: number; testimony: string; role?: string }[] = [];
 
-  const leaders = [
-    {
-      name: 'Pastor Aaron Gassy',
-      role: 'Youth Pastor',
-      bio: 'Leading youth ministry with passion for discipleship and spiritual growth',
-      image: '/images/leaders/youth-pastor.svg'
-    },
-    {
-      name: 'Sister Joy Okoro',
-      role: 'Youth Coordinator',
-      bio: 'Coordinates youth programs and mentors young ladies',
-      image: '/images/leaders/youth-coordinator.svg'
-    },
-    {
-      name: 'Brother Samuel Eze',
-      role: 'Worship Leader',
-      bio: 'Leads youth worship and trains upcoming musicians',
-      image: '/images/leaders/worship-leader.svg'
-    }
-  ];
+  const leaders: { name: string; role: string; bio?: string; image?: string }[] = [];
 
   return (
     <Layout>
       <div className="min-h-screen bg-gradient-to-br from-primary-50 to-secondary-50">
         {/* Hero Section */}
-        <section className="relative bg-gradient-to-r from-primary-600 to-secondary-600 text-white py-20">
+        <section className="relative bg-gradient-to-r from-emerald-700 to-emerald-600 text-white py-20">
           {/* Mobile-only background image with primary overlay */}
           <div
             className="absolute inset-0 bg-cover bg-center bg-no-repeat sm:hidden"
             style={{ backgroundImage: "url('/images/logo.jpg')" }}
           />
-          <div className="absolute inset-0 bg-primary-900/60 sm:hidden" />
+          <div className="absolute inset-0 bg-emerald-900/50 sm:hidden" />
           {/* Desktop/tablet subtle overlay */}
-          <div className="absolute inset-0 bg-black/20 hidden sm:block"></div>
+          <div className="absolute inset-0 bg-black/10 hidden sm:block"></div>
           <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid md:grid-cols-2 gap-16 items-center">
               <div>
                 <h1 className="text-3xl md:text-4xl font-bold heading-primary mb-6">
                   Youth Network
                 </h1>
-                <p className="text-lg md:text-xl text-primary-100 mb-8">
+                <p className="text-lg md:text-xl text-white/90 mb-8">
                   &quot;Don&apos;t let anyone look down on you because you are young, but set an example for the believers in speech, in conduct, in love, in faith and in purity.&quot;
                 </p>
-                <p className="text-base text-primary-200 mb-8">
+                <p className="text-base text-white/80 mb-8">
                   1 Timothy 4:12 (NIV)
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Link
                     href="#join"
-                    className="bg-white text-primary-600 px-8 py-3 rounded-lg font-semibold hover:bg-primary-50 transition-colors text-center"
+                    className="bg-white text-black px-8 py-3 rounded-lg font-semibold hover:bg-neutral-100 transition-colors text-center border border-neutral-200"
                   >
                     Join Our Youth
                   </Link>
                   <Link
                     href="#programs"
-                    className="bg-primary-700 text-white px-8 py-3 rounded-lg font-semibold hover:bg-primary-800 transition-colors border border-primary-500 text-center"
+                    className="bg-amber-300 text-black px-8 py-3 rounded-lg font-semibold hover:bg-amber-400 transition-colors text-center border border-amber-400"
                   >
                     View Programs
                   </Link>
@@ -149,19 +123,19 @@ export default function YouthMinistryPage() {
                 <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8">
                   <div className="grid grid-cols-2 gap-6 text-center">
                     <div>
-                      <div className="text-3xl font-bold text-white mb-2">500+</div>
+                      <div className="text-3xl font-bold text-white mb-2"><AnimatedCounter start={500} speedPerSecond={0.8} suffix="+" /></div>
                       <div className="text-primary-200">Active Youth</div>
                     </div>
                     <div>
-                      <div className="text-3xl font-bold text-white mb-2">15</div>
+                      <div className="text-3xl font-bold text-white mb-2"><AnimatedCounter start={15} speedPerSecond={0.2} /></div>
                       <div className="text-primary-200">Programs</div>
                     </div>
                     <div>
-                      <div className="text-3xl font-bold text-white mb-2">50+</div>
+                      <div className="text-3xl font-bold text-white mb-2"><AnimatedCounter start={50} speedPerSecond={0.5} suffix="+" /></div>
                       <div className="text-primary-200">Leaders Trained</div>
                     </div>
                     <div>
-                      <div className="text-3xl font-bold text-white mb-2">8</div>
+                      <div className="text-3xl font-bold text-white mb-2"><AnimatedCounter start={8} speedPerSecond={0.1} /></div>
                       <div className="text-primary-200">Years Impact</div>
                     </div>
                   </div>
@@ -172,37 +146,57 @@ export default function YouthMinistryPage() {
         </section>
 
         {/* Mission Statement */}
-        <section className="py-20 bg-primary-50">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="text-2xl md:text-3xl font-bold heading-primary text-secondary-900 mb-6">
+        <section id="mission" className="py-20 bg-primary-50">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="text-2xl md:text-3xl font-bold heading-primary text-secondary-900 mb-6 text-center">
               Our Mission
             </h2>
             <div className="w-24 h-1 bg-primary-500 mx-auto mb-8"></div>
-            <p className="text-lg text-secondary-600 leading-relaxed mb-8">
+            <p className="text-lg text-secondary-700 leading-relaxed mb-12 text-center max-w-3xl mx-auto">
               To empower young people to discover their identity in Christ, develop authentic relationships, 
               and make a lasting impact in their communities and beyond.
             </p>
-            <div className="grid md:grid-cols-3 gap-10">
-              <div className="text-center">
-                <div className="w-16 h-16 bg-primary-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <HeartIcon className="w-8 h-8 text-white" />
+            <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+              {/* Card 1: Passionate Worship */}
+              <div className="group relative rounded-2xl bg-white border border-emerald-200 shadow-lg transition-all duration-300 motion-safe:hover:shadow-xl motion-safe:hover:-translate-y-1 overflow-hidden">
+                <div className="absolute inset-x-0 top-0 h-1 bg-emerald-500"></div>
+                <div className="p-6">
+                  <div className="flex items-center gap-3 mb-4">
+                    <span className="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-emerald-100">
+                      <HeartIcon className="h-6 w-6 text-emerald-700" />
+                    </span>
+                    <h3 className="text-lg md:text-xl font-semibold heading-primary text-secondary-900">Passionate Worship</h3>
+                  </div>
+                  <p className="text-secondary-700">Cultivating hearts that worship God in spirit and truth.</p>
                 </div>
-                <h3 className="text-xl font-semibold text-secondary-800 mb-2">Passionate Worship</h3>
-                <p className="text-secondary-600">Cultivating hearts that worship God in spirit and truth</p>
               </div>
-              <div className="text-center">
-                <div className="w-16 h-16 bg-primary-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <AcademicCapIcon className="w-8 h-8 text-white" />
+
+              {/* Card 2: Biblical Foundation */}
+              <div className="group relative rounded-2xl bg-white border border-emerald-200 shadow-lg transition-all duration-300 motion-safe:hover:shadow-xl motion-safe:hover:-translate-y-1 overflow-hidden">
+                <div className="absolute inset-x-0 top-0 h-1 bg-emerald-500"></div>
+                <div className="p-6">
+                  <div className="flex items-center gap-3 mb-4">
+                    <span className="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-emerald-100">
+                      <AcademicCapIcon className="h-6 w-6 text-emerald-700" />
+                    </span>
+                    <h3 className="text-lg md:text-xl font-semibold heading-primary text-secondary-900">Biblical Foundation</h3>
+                  </div>
+                  <p className="text-secondary-700">Building lives on the solid foundation of God&apos;s Word.</p>
                 </div>
-                <h3 className="text-xl font-semibold text-secondary-800 mb-2">Biblical Foundation</h3>
-                <p className="text-secondary-600">Building lives on the solid foundation of God&apos;s Word</p>
               </div>
-              <div className="text-center">
-                <div className="w-16 h-16 bg-primary-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <UserGroupIcon className="w-8 h-8 text-white" />
+
+              {/* Card 3: Community Impact */}
+              <div className="group relative rounded-2xl bg-white border border-emerald-200 shadow-lg transition-all duration-300 motion-safe:hover:shadow-xl motion-safe:hover:-translate-y-1 overflow-hidden">
+                <div className="absolute inset-x-0 top-0 h-1 bg-emerald-500"></div>
+                <div className="p-6">
+                  <div className="flex items-center gap-3 mb-4">
+                    <span className="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-emerald-100">
+                      <UserGroupIcon className="h-6 w-6 text-emerald-700" />
+                    </span>
+                    <h3 className="text-lg md:text-xl font-semibold heading-primary text-secondary-900">Community Impact</h3>
+                  </div>
+                  <p className="text-secondary-700">Empowering youth to make a difference in their communities.</p>
                 </div>
-                <h3 className="text-xl font-semibold text-secondary-800 mb-2">Community Impact</h3>
-                <p className="text-secondary-600">Empowering youth to make a difference in their communities</p>
               </div>
             </div>
           </div>
@@ -227,18 +221,18 @@ export default function YouthMinistryPage() {
                   onClick={() => setActiveTab('programs')}
                   className={`px-6 py-2 rounded-md font-semibold transition-colors ${
                     activeTab === 'programs'
-                      ? 'bg-primary-600 text-white'
-                    : 'text-secondary-600 hover:text-primary-600'
+                      ? 'bg-primary-600 text-black'
+                      : 'text-black hover:text-primary-700'
                   }`}
                 >
                   Programs
                 </button>
                 <button
                   onClick={() => setActiveTab('events')}
-                  className={`px-6 py-2 rounded-md font-semibold transition-colors ${
+                  className={`px-7 py-2.5 rounded-lg font-semibold transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 ${
                     activeTab === 'events'
-                      ? 'bg-primary-600 text-white'
-                    : 'text-secondary-600 hover:text-primary-600'
+                      ? 'bg-emerald-600 text-black shadow ring-2 ring-emerald-300'
+                      : 'bg-emerald-500 text-black border border-emerald-800 hover:bg-emerald-600'
                   }`}
                 >
                   Events
@@ -252,7 +246,7 @@ export default function YouthMinistryPage() {
                 {programs.map((program, index) => {
                   const IconComponent = program.icon;
                   return (
-                    <div key={index} className="bg-white rounded-lg shadow-md p-8 hover:shadow-lg transition-shadow">
+                    <div key={index} className="bg-white rounded-lg shadow-md p-8 hover:shadow-lg transition-shadow border-4 border-black">
                       <div className="flex items-start gap-4">
                         <div className="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center flex-shrink-0">
                           <IconComponent className="w-6 h-6 text-primary-600" />
@@ -280,27 +274,36 @@ export default function YouthMinistryPage() {
 
             {/* Events Tab */}
             {activeTab === 'events' && (
-              <div className="grid md:grid-cols-2 gap-10">
-                {events.map((event, index) => (
-                  <div key={index} className="bg-white rounded-lg shadow-md p-8 hover:shadow-lg transition-shadow">
-                    <h3 className="text-xl font-semibold text-secondary-900 mb-3">{event.title}</h3>
-                    <p className="text-secondary-600 mb-4">{event.description}</p>
-                    <div className="space-y-2 text-sm text-secondary-500">
-                      <div className="flex items-center gap-2">
-                        <CalendarDaysIcon className="w-4 h-4" />
-                        <span>{event.date}</span>
+              <div className="space-y-8">
+                <div className="text-center md:text-left">
+                  <h3 className="text-2xl font-bold text-secondary-900">Upcoming Events</h3>
+                  <p className="text-secondary-600">Discover what’s happening and how to participate. Each card shows When and Where; use the button to view full details and registration.</p>
+                </div>
+                <div className="grid md:grid-cols-2 gap-10">
+                  {events.map((event, index) => (
+                    <div key={index} className="bg-white rounded-lg shadow-md p-8 hover:shadow-lg transition-shadow border-4 border-black">
+                      <h3 className="text-xl font-semibold text-secondary-900 mb-3">{event.title}</h3>
+                      <p className="text-secondary-700 mb-4">{event.description}</p>
+                      <div className="mt-2 space-y-2 text-sm text-secondary-700">
+                        <div className="flex items-center gap-2">
+                          <CalendarDaysIcon className="w-4 h-4 text-secondary-900" />
+                          <span><span className="font-medium text-secondary-900">When:</span> {event.date}</span>
+                        </div>
+                        <div className="flex items-center gap-2">
+                          <MapPinIcon className="w-4 h-4 text-secondary-900" />
+                          <span><span className="font-medium text-secondary-900">Where:</span> {event.location}</span>
+                        </div>
                       </div>
-                      <div className="flex items-center gap-2">
-                        <MapPinIcon className="w-4 h-4" />
-                        <span>{event.location}</span>
-                      </div>
+                      <button
+                        className="mt-6 inline-flex items-center gap-1 px-4 py-2 rounded-md bg-emerald-600 text-white font-semibold hover:bg-emerald-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400"
+                        aria-label={`View details and registration for ${event.title}`}
+                      >
+                        View details & registration
+                        <ArrowRightIcon className="w-4 h-4" />
+                      </button>
                     </div>
-                    <button className="mt-4 text-primary-600 font-semibold hover:text-primary-700 flex items-center gap-1">
-                      Learn More
-                      <ArrowRightIcon className="w-4 h-4" />
-                    </button>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
             )}
           </div>
@@ -319,23 +322,30 @@ export default function YouthMinistryPage() {
               </p>
             </div>
 
-            <div className="grid md:grid-cols-3 gap-8">
-              {leaders.map((leader, index) => (
-                <div key={index} className="text-center">
-                  <div className="w-24 h-24 bg-primary-500 rounded-full mx-auto mb-4 flex items-center justify-center">
-                    <UserGroupIcon className="w-12 h-12 text-white" />
+            {leaders.length === 0 ? (
+              <div className="bg-white rounded-lg shadow-sm p-8 text-center border border-neutral-200">
+                <h3 className="text-xl font-semibold text-secondary-900 mb-2">Leadership profiles coming soon</h3>
+                <p className="text-secondary-600">We’re updating this section. Please check back later or contact us for more information.</p>
+              </div>
+            ) : (
+              <div className="grid md:grid-cols-3 gap-8">
+                {leaders.map((leader, index) => (
+                  <div key={index} className="text-center">
+                    <div className="w-24 h-24 bg-primary-500 rounded-full mx-auto mb-4 flex items-center justify-center">
+                      <UserGroupIcon className="w-12 h-12 text-white" />
+                    </div>
+                    <h3 className="text-xl font-semibold text-secondary-900 mb-2">{leader.name}</h3>
+                    <p className="text-primary-600 font-medium mb-3">{leader.role}</p>
+                    <p className="text-secondary-600 text-sm">{leader.bio}</p>
                   </div>
-                  <h3 className="text-xl font-semibold text-secondary-900 mb-2">{leader.name}</h3>
-                  <p className="text-primary-600 font-medium mb-3">{leader.role}</p>
-                  <p className="text-secondary-600 text-sm">{leader.bio}</p>
-                </div>
-              ))}
-            </div>
+                ))}
+              </div>
+            )}
           </div>
         </section>
 
         {/* Testimonials */}
-        <section className="py-20 bg-primary-100">
+        <section id="testimonials" className="py-20 bg-primary-100">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <h2 className="text-2xl md:text-3xl font-bold heading-primary text-secondary-900 mb-6">
@@ -346,69 +356,77 @@ export default function YouthMinistryPage() {
                 Hear from young people whose lives have been transformed
               </p>
             </div>
-
-            <div className="grid md:grid-cols-3 gap-8">
-              {testimonials.map((testimonial, index) => (
-                <div key={index} className="bg-primary-50 rounded-lg shadow-md p-8 border border-primary-200">
-                  <p className="text-secondary-600 mb-6 italic">&quot;{testimonial.testimony}&quot;</p>
-                  <div className="border-t border-primary-300 pt-6">
-                    <h4 className="font-semibold text-secondary-900">{testimonial.name}</h4>
-                    <p className="text-sm text-secondary-500">Age {testimonial.age} • {testimonial.role}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
+            {testimonials.length === 0 ? (
+               <div className="bg-white rounded-lg shadow-sm p-8 text-center border border-neutral-200">
+                 <h3 className="text-xl font-semibold text-secondary-900 mb-2">Testimonials coming soon</h3>
+                 <p className="text-secondary-600">We’re updating this section. Please check back later or contact us to share your story.</p>
+               </div>
+            ) : (
+               <div className="grid md:grid-cols-3 gap-8">
+                 {testimonials.map((testimonial, index) => (
+                   <div key={index} className="bg-primary-50 rounded-lg shadow-md p-8 border border-primary-200">
+                     <p className="text-secondary-600 mb-6 italic">&quot;{testimonial.testimony}&quot;</p>
+                     <div className="border-t border-primary-300 pt-6">
+                       <h4 className="font-semibold text-secondary-900">{testimonial.name}</h4>
+                       <p className="text-sm text-secondary-500">Age {testimonial.age} • {testimonial.role}</p>
+                     </div>
+                   </div>
+                 ))}
+               </div>
+            )}
           </div>
         </section>
 
         {/* Join Us Section */}
-        <section id="join" className="py-20 bg-gradient-to-r from-primary-600 to-secondary-600 text-white">
+        <section id="join" className="py-20 bg-secondary-800 bg-gradient-to-r from-primary-600 to-secondary-600">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="text-2xl md:text-3xl font-bold heading-primary mb-8">
+            <h2 className="text-2xl md:text-3xl font-bold heading-primary mb-8 text-black">
               Join Youth Network
             </h2>
-            <p className="text-lg text-primary-100 mb-12">
-              Are you ready to grow in your faith, discover your purpose, and make a difference? 
-              Join hundreds of young people who are passionate about following Jesus.
-            </p>
-            <div className="bg-white/10 backdrop-blur-sm rounded-lg p-12 mb-12">
-              <h3 className="text-2xl font-semibold mb-8">Next Steps</h3>
-              <div className="grid md:grid-cols-2 gap-8 text-left">
-                <div>
-                  <h4 className="font-semibold mb-3">1. Visit Us</h4>
-                  <p className="text-primary-100">Join us for any of our weekly programs</p>
-                </div>
-                <div>
-                  <h4 className="font-semibold mb-3">2. Connect</h4>
-                  <p className="text-primary-100">Meet our leaders and other youth</p>
-                </div>
-                <div>
-                  <h4 className="font-semibold mb-3">3. Get Involved</h4>
-                  <p className="text-primary-100">Find your place in ministry</p>
-                </div>
-                <div>
-                  <h4 className="font-semibold mb-3">4. Grow</h4>
-                  <p className="text-primary-100">Develop your relationship with God</p>
-                </div>
-              </div>
-            </div>
-            <div className="flex flex-col sm:flex-row gap-6 justify-center">
-              <Link
-                href="/contact"
-                className="bg-white text-primary-600 px-8 py-4 rounded-lg font-semibold hover:bg-primary-50 transition-colors text-center"
-              >
-                Join Youth Network
-              </Link>
-              <Link
-                href="/events"
-                className="bg-primary-700 text-white px-8 py-4 rounded-lg font-semibold hover:bg-primary-800 transition-colors border border-primary-500 text-center"
-              >
-                View Events
-              </Link>
+            <div className="bg-white rounded-lg shadow-sm p-8 text-center border border-neutral-200">
+              <h3 className="text-xl font-semibold text-black mb-2">Join Youth Network information coming soon</h3>
+              <p className="text-black">We’re preparing this section. Please check back later or contact us if you’d like to get involved now.</p>
             </div>
           </div>
         </section>
       </div>
       </Layout>
       );
+}
+
+// Animated counter that continuously increments
+function AnimatedCounter({
+  start = 0,
+  speedPerSecond = 0.5,
+  className = '',
+  suffix = ''
+}: {
+  start?: number;
+  speedPerSecond?: number; // units per second
+  className?: string;
+  suffix?: string;
+}) {
+  const [value, setValue] = useState<number>(start);
+  const rafRef = useRef<number | null>(null);
+  const lastTimeRef = useRef<number | null>(null);
+
+  useEffect(() => {
+    const animate = (timestamp: number) => {
+      if (lastTimeRef.current == null) {
+        lastTimeRef.current = timestamp;
+      }
+      const delta = (timestamp - lastTimeRef.current) / 1000; // seconds
+      lastTimeRef.current = timestamp;
+      setValue((prev) => prev + speedPerSecond * delta);
+      rafRef.current = requestAnimationFrame(animate);
+    };
+    rafRef.current = requestAnimationFrame(animate);
+    return () => {
+      if (rafRef.current) cancelAnimationFrame(rafRef.current);
+      lastTimeRef.current = null;
+    };
+  }, [speedPerSecond]);
+
+  const display = Math.floor(value).toLocaleString();
+  return <span className={className}>{display}{suffix}</span>;
 }
