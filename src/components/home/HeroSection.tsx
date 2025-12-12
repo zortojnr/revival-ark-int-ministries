@@ -57,16 +57,6 @@ export default function HeroSection() {
         animate="visible"
       >
         <div className="max-w-4xl mx-auto">
-          {/* Ministry Badge */}
-          <motion.div 
-            className="inline-flex items-center px-4 py-1.5 rounded-full border border-white/30 bg-white/10 backdrop-blur-md mb-8"
-            variants={itemVariants}
-          >
-            <span className="text-white text-xs md:text-sm font-medium tracking-widest uppercase">
-              Revival Ark International Ministries
-            </span>
-          </motion.div>
-
           {/* Main Heading */}
           <motion.h1 
             className="text-4xl sm:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight tracking-tight drop-shadow-lg"
