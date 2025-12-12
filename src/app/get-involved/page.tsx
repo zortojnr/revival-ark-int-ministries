@@ -117,7 +117,7 @@ export default function GetInvolvedPage() {
               </p>
               <Link
                 href="/ministries/revival-crusades"
-                className="inline-flex items-center px-8 py-3 bg-white text-primary-900 font-bold rounded-lg hover:bg-gray-100 transition-colors"
+                className="inline-flex items-center px-8 py-3 bg-secondary-900 text-white font-bold rounded-lg hover:bg-secondary-800 transition-colors shadow-lg"
               >
                 See Upcoming Events
               </Link>

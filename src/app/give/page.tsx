@@ -294,15 +294,15 @@ export default function GivePage() {
 
             {/* Donation Summary */}
             {finalAmount > 0 && (
-              <div className="mb-10 p-8 card-gradient border-2 border-primary-200">
-                <h3 className="text-lg-enhanced font-semibold text-primary-800 mb-4">
+              <div className="mb-10 p-8 card-gradient border-2 border-primary-200 shadow-xl">
+                <h3 className="text-lg-enhanced font-bold text-white mb-4 drop-shadow-md">
                   Donation Summary
                 </h3>
-                <div className="flex justify-between items-center">
-                  <span className="text-body text-primary-700">
+                <div className="flex justify-between items-center text-white">
+                  <span className="text-body font-medium drop-shadow-sm">
                     {selectedDonation?.label || 'Custom Donation'}
                   </span>
-                  <span className="text-3xl font-bold text-primary-800">
+                  <span className="text-3xl font-bold drop-shadow-md">
                     ₦{finalAmount.toLocaleString()}
                   </span>
                 </div>

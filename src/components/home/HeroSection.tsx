@@ -69,11 +69,11 @@ export default function HeroSection() {
 
           {/* Main Heading */}
           <motion.h1 
-            className="text-4xl sm:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight tracking-tight"
+            className="text-4xl sm:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight tracking-tight drop-shadow-lg"
             variants={itemVariants}
           >
             Experience the <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-accent-400 pb-2">
+            <span className="text-accent-400 drop-shadow-xl">
               Fire of Revival
             </span>
           </motion.h1>

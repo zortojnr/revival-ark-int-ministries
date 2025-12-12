@@ -13,10 +13,10 @@ import {
 export default function LeadershipPage() {
   const seniorLeadership = [
     {
-      name: 'Pastor [Name]',
+      name: 'Pastor Haruna Aaron Gassy',
       title: 'Senior Pastor & Founder',
       image: '/images/leadership/senior-pastor.svg',
-      bio: 'Called by God with a heart for revival and the nations. Pastor [Name] has been in ministry for over [X] years, with a passion for seeing souls saved and believers equipped for kingdom service.',
+      bio: 'Called by God with a heart for revival and the nations. Pastor Haruna Aaron Gassy has been in ministry for over 15 years, with a passion for seeing souls saved and believers equipped for kingdom service. His dynamic teaching and prophetic insight have impacted countless lives.',
       specialties: ['Evangelism', 'Church Planting', 'Leadership Development'],
       email: 'revivalarkint\'lministry@gmail.com',
       phone: '+234-803-456-7890'
@@ -137,34 +137,39 @@ export default function LeadershipPage() {
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-12">
-            {seniorLeadership.map((leader, index) => (
+          <div className="grid lg:grid-cols-1 gap-12 max-w-3xl mx-auto">
+            {seniorLeadership.slice(0, 1).map((leader, index) => (
               <div key={index} className="bg-primary-100 rounded-2xl p-8 shadow-lg border border-primary-200">
                 <div className="text-center mb-6">
-                  <div className="relative w-32 h-32 mx-auto mb-4">
-                    <div className="w-full h-full bg-primary-500 rounded-full flex items-center justify-center">
-                      <UserGroupIcon className="h-16 w-16 text-white" />
+                  <div className="relative w-48 h-48 mx-auto mb-6">
+                    <div className="w-full h-full bg-primary-500 rounded-full flex items-center justify-center overflow-hidden border-4 border-white shadow-md">
+                      <Image
+                        src="/images/rev1.jpg"
+                        alt={leader.name}
+                        fill
+                        className="object-cover"
+                      />
                     </div>
                   </div>
-                  <h3 className="text-2xl font-bold text-secondary-900 mb-2">
+                  <h3 className="text-3xl font-bold text-secondary-900 mb-2">
                     {leader.name}
                   </h3>
-                  <p className="text-lg text-primary-700 font-semibold mb-4">
+                  <p className="text-xl text-primary-700 font-semibold mb-4">
                     {leader.title}
                   </p>
                 </div>
 
-                <p className="text-secondary-700 leading-relaxed mb-6 text-center">
+                <p className="text-secondary-700 leading-relaxed mb-8 text-center text-lg">
                   {leader.bio}
                 </p>
 
-                <div className="mb-6">
-                  <h4 className="text-sm font-semibold text-secondary-900 mb-3 text-center">
+                <div className="mb-8">
+                  <h4 className="text-sm font-semibold text-secondary-900 mb-3 text-center uppercase tracking-wider">
                     Ministry Specialties
                   </h4>
                   <div className="flex flex-wrap justify-center gap-2">
                     {leader.specialties.map((specialty, idx) => (
-                      <span key={idx} className="px-3 py-1 bg-primary-600 text-white text-sm rounded-full">
+                      <span key={idx} className="px-4 py-2 bg-primary-600 text-white text-sm font-medium rounded-full shadow-sm">
                         {specialty}
                       </span>
                     ))}
@@ -174,16 +179,16 @@ export default function LeadershipPage() {
                 <div className="flex justify-center space-x-4">
                   <a
                     href={`mailto:${leader.email}`}
-                    className="inline-flex items-center px-4 py-2 bg-primary-600 hover:bg-primary-700 text-white rounded-lg transition-colors"
+                    className="inline-flex items-center px-6 py-3 bg-primary-600 hover:bg-primary-700 text-white rounded-lg transition-colors font-medium shadow-md"
                   >
-                    <EnvelopeIcon className="h-4 w-4 mr-2" />
+                    <EnvelopeIcon className="h-5 w-5 mr-2" />
                     Email
                   </a>
                   <a
                     href={`tel:${leader.phone}`}
-                    className="inline-flex items-center px-4 py-2 bg-secondary-600 hover:bg-secondary-700 text-white rounded-lg transition-colors"
+                    className="inline-flex items-center px-6 py-3 bg-secondary-600 hover:bg-secondary-700 text-white rounded-lg transition-colors font-medium shadow-md"
                   >
-                    <PhoneIcon className="h-4 w-4 mr-2" />
+                    <PhoneIcon className="h-5 w-5 mr-2" />
                     Call
                   </a>
                 </div>
