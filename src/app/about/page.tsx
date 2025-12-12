@@ -86,7 +86,7 @@ export default function AboutPage() {
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: 'url(/images/logo.jpg)',
+            backgroundImage: 'url(/images/about/hero.jpg)',
             backgroundPosition: 'center center',
             backgroundSize: 'cover',
             opacity: 0.4

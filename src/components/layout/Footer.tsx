@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { 
   MapPinIcon, 
   PhoneIcon, 
@@ -112,8 +113,14 @@ export default function Footer() {
           {/* Organization Info */}
           <div className="lg:col-span-1">
             <div className="flex items-center space-x-3 mb-6">
-              <div className="w-12 h-12 bg-gradient-to-r from-primary-500 to-primary-600 rounded-full flex items-center justify-center shadow-lg">
-                <span className="text-white font-bold text-xl">RA</span>
+              <div className="w-12 h-12 relative">
+                <Image
+                  src="/images/logo.jpg"
+                  alt="Revival Ark Logo"
+                  width={48}
+                  height={48}
+                  className="rounded-full object-cover shadow-lg"
+                />
               </div>
               <div>
                 <h3 className="font-heading text-lg font-bold text-white">

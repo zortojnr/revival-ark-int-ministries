@@ -18,29 +18,21 @@ interface Testimony {
   name: string;
   location: string;
   testimony: string;
-  image: string;
 }
 
 const impactStats: ImpactStat[] = [
   {
     id: 1,
     icon: HeartIcon,
-    value: 2500,
+    value: 100,
     suffix: '+',
     label: 'Orphans Helped',
     description: 'Children provided with care, education, and hope through our Ark of Hope ministry'
   },
   {
-    id: 2,
-    icon: GlobeAltIcon,
-    value: 15,
-    label: 'Nations Reached',
-    description: 'Countries where our missions and outreach programs have made an impact'
-  },
-  {
     id: 3,
     icon: AcademicCapIcon,
-    value: 1200,
+    value: 300,
     suffix: '+',
     label: 'Students Trained',
     description: 'Individuals equipped through our Sword Institute Bible School programs'
@@ -48,7 +40,7 @@ const impactStats: ImpactStat[] = [
   {
     id: 4,
     icon: UserGroupIcon,
-    value: 50000,
+    value: 1000,
     suffix: '+',
     label: 'Lives Touched',
     description: 'People reached through crusades, conferences, and ministry events'
@@ -57,30 +49,37 @@ const impactStats: ImpactStat[] = [
 
 const testimonies: Testimony[] = [
   {
+    id: 1,
+    name: 'Benedict A. W.',
+    location: 'Yola, Nigeria',
+    testimony: 'Grace and peace in Christ Jesus. I am deeply thankful for the man of God leading Revival Ark International Ministries. His sacrificial life and faithful mentorship have profoundly shaped my spiritual walk. From my campus days, his teachings on spiritual progress ignited my faith, guiding me to a deeper relationship with God. His selfless example continues to inspire me to live boldly for Christ. I’m forever grateful for his unwavering dedication. Blessings.'
+  },
+  {
+    id: 2,
+    name: 'Goodluck O.',
+    location: 'Nigerian Army University Biu, Borno state, Nigeria',
+    testimony: 'My first encounter with Pastor Haruna dates back to 2014 during my university days. As a freshman who loved God and was earnestly trusting Him for direction... His personal life of Christlikeness and disciplined spiritual routines became an enviable model we all aspired to emulate. By the Lord’s mercies, it has now been over ten years, and Papa Haruna (as I fondly call him) has continued to exemplify Christ consistently and fervently. My life remains deeply nourished, shaped, and inspired through the grace of his spiritual oversight.'
+  },
+  {
     id: 3,
-    name: 'Grace Adebayo',
-    location: 'Ibadan, Nigeria',
-    testimony: 'Through the women\'s ministry, I found healing from past hurts and discovered my calling. I now lead a support group for women in my community.',
-    image: '/images/testimonies/grace-adebayo.jpg'
+    name: 'Johnbaba Godwin',
+    location: 'Jos, Nigeria',
+    testimony: 'Dear Revival Ark Ministry, Let me begin with; As a Fresher on Campus then, My work with God took a new turn when Pastor Aaron preached \'Deep calls unto deep\' at NIFES Night of Encounter, Modibbo Adama University, Yola... As a Duo, your lives have been about revival, Mirroring and charting a path for true Kingdom alignment. We are grateful for all the impact hitherto and we look forward to the mighty things the Lord will wrought through this Ministry.'
+  },
+  {
+    id: 4,
+    name: 'Joy Amana',
+    location: 'Yola, Nigeria',
+    testimony: 'Through Pastor Haruna Aaron Saleh and Revival Ark Ministries, I have experienced God’s goodness in every area of my life. Pastor Aaron has been a true father, leader, shepherd, and teacher... I’ve watched him love his family and the church selflessly, giving me a living example of what a true man of God should be. My life is now a testimony of his impact, proof that God’s servant has indeed mirrored Christ to me.'
   }
 ];
 
 export default function ImpactSection() {
-  const [currentTestimony, setCurrentTestimony] = useState(0);
   const [animatedStats, setAnimatedStats] = useState<{ [key: number]: number }>({});
   const [hasAnimated, setHasAnimated] = useState(false);
   const sectionRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(sectionRef, { once: true, amount: 0.3 });
   const controls = useAnimation();
-
-  // Auto-rotate testimonies
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentTestimony((prev) => (prev + 1) % testimonies.length);
-    }, 5000);
-
-    return () => clearInterval(interval);
-  }, []);
 
   // Animate stats when section comes into view
   useEffect(() => {
@@ -174,7 +173,7 @@ export default function ImpactSection() {
             <SparklesIcon className="h-8 w-8 text-white" />
           </div>
           <h2 className="heading-1 mb-6">
-            Our Impact Across <span className="text-white font-bold">Nations</span>
+            Our Impact <span className="text-primary-600 font-bold">Thus Far</span>
           </h2>
           <p className="body-large max-w-4xl mx-auto">
             By God's grace, Revival Ark International Ministries continues to touch lives, 
@@ -184,7 +183,7 @@ export default function ImpactSection() {
 
         {/* Impact Statistics */}
         <motion.div 
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 mb-16 sm:mb-20"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-20"
           variants={containerVariants}
         >
           {impactStats.map((stat, index) => {
@@ -205,7 +204,6 @@ export default function ImpactSection() {
                   <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-primary-500 to-primary-600 text-white rounded-2xl shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:from-primary-600 group-hover:to-primary-700 border border-primary-400/20">
                     <IconComponent className="h-10 w-10" />
                   </div>
-                  {/* Floating decoration */}
                   <div className="absolute -top-2 -right-2 w-6 h-6 bg-secondary-600 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-md">
                     <StarIcon className="h-3 w-3 text-white" />
                   </div>
@@ -224,16 +222,14 @@ export default function ImpactSection() {
           })}
         </motion.div>
 
-        {/* Testimonies Section */}
+        {/* Testimonies Section (Marquee) */}
         <motion.div 
-          className="rounded-3xl p-8 lg:p-12 shadow-2xl border border-white/30 relative"
+          className="rounded-3xl p-8 lg:p-12 shadow-2xl border border-white/30 relative overflow-hidden"
           style={{ backgroundColor: '#50C878' }}
           variants={itemVariants}
         >
           {/* Decorative elements */}
           <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-white/5 rounded-3xl z-background"></div>
-          <div className="absolute top-6 right-6 w-20 h-20 bg-white/20 rounded-full blur-xl z-background"></div>
-          <div className="absolute bottom-6 left-6 w-16 h-16 bg-white/20 rounded-full blur-lg z-background"></div>
           
           <div className="relative text-center mb-12 z-content">
             <div className="inline-flex items-center justify-center w-16 h-16 bg-white/20 backdrop-blur-sm rounded-full mb-6 shadow-lg border border-white/30">
@@ -247,74 +243,56 @@ export default function ImpactSection() {
             </p>
           </div>
 
-          {/* Testimony Carousel */}
-          <div className="relative max-w-4xl mx-auto z-content">
-            <div className="overflow-hidden rounded-2xl">
-              <motion.div 
-                className="flex transition-transform duration-500 ease-in-out"
-                style={{ transform: `translateX(-${currentTestimony * 100}%)` }}
-                animate={{ x: -currentTestimony * 100 + '%' }}
-                transition={{ duration: 0.5, ease: "easeInOut" }}
-              >
-                {testimonies.map((testimony, index) => (
-                  <div key={testimony.id} className="w-full flex-shrink-0">
-                    <motion.div 
-                      className="rounded-2xl p-8 lg:p-12 shadow-lg mx-4 border border-white/30"
-                      style={{ backgroundColor: 'rgba(255, 255, 255, 0.15)', backdropFilter: 'blur(10px)' }}
-                      whileHover={{ scale: 1.02 }}
-                      transition={{ duration: 0.2 }}
-                    >
-                      <div className="flex flex-col lg:flex-row items-center lg:items-start space-y-6 lg:space-y-0 lg:space-x-8">
-                        <div className="relative w-24 h-24 lg:w-32 lg:h-32 flex-shrink-0">
-                          <div className="w-full h-full bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center shadow-lg border border-white/30">
-                            <UserGroupIcon className="h-12 w-12 lg:h-16 lg:w-16 text-white" />
-                          </div>
-                          {/* Decorative ring */}
-                          <div className="absolute inset-0 rounded-full border-4 border-white/30 animate-pulse"></div>
+          {/* Continuous Marquee */}
+          <div className="relative w-full overflow-hidden mask-linear-gradient">
+            <motion.div 
+              className="flex space-x-6 w-max"
+              animate={{ x: ["0%", "-50%"] }}
+              transition={{ 
+                ease: "linear", 
+                duration: 40, 
+                repeat: Infinity 
+              }}
+            >
+              {[...testimonies, ...testimonies].map((testimony, index) => (
+                <div 
+                  key={`${testimony.id}-${index}`} 
+                  className="w-[350px] sm:w-[450px] flex-shrink-0"
+                >
+                  <div 
+                    className="h-full rounded-2xl p-8 shadow-lg border border-white/30 flex flex-col"
+                    style={{ backgroundColor: 'rgba(255, 255, 255, 0.15)', backdropFilter: 'blur(10px)' }}
+                  >
+                    <div className="mb-6 flex-grow">
+                      <div className="relative">
+                        <span className="text-4xl text-white/40 absolute -top-4 -left-2 font-serif">"</span>
+                        <p className="text-white text-sm sm:text-base italic leading-relaxed relative z-10 pl-4">
+                          {testimony.testimony.length > 200 
+                            ? testimony.testimony.substring(0, 200) + '...' 
+                            : testimony.testimony}
+                        </p>
+                      </div>
+                    </div>
+                    
+                    <div className="flex items-center mt-auto border-t border-white/20 pt-4">
+                      <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center text-white mr-3 shrink-0">
+                         <span className="font-bold text-sm">{testimony.name.charAt(0)}</span>
+                      </div>
+                      <div>
+                        <div className="font-bold text-white text-sm">
+                          {testimony.name}
                         </div>
-                        <div className="flex-1 text-center lg:text-left">
-                          <blockquote className="body-large mb-6 italic relative text-white font-semibold">
-                            <span className="text-4xl text-white absolute -top-2 -left-2">"</span>
-                            {testimony.testimony}
-                            <span className="text-4xl text-white absolute -bottom-4 -right-2">"</span>
-                          </blockquote>
-                          <div className="flex items-center justify-center lg:justify-start space-x-2">
-                            <div>
-                              <div className="font-bold text-white text-lg">
-                                {testimony.name}
-                              </div>
-                              <div className="text-white font-semibold">
-                                {testimony.location}
-                              </div>
-                            </div>
-                            <div className="w-2 h-2 bg-white rounded-full"></div>
-                          </div>
+                        <div className="text-white/80 text-xs font-medium">
+                          {testimony.location}
                         </div>
                       </div>
-                    </motion.div>
+                    </div>
                   </div>
-                ))}
-              </motion.div>
-            </div>
-
-            {/* Testimony Navigation */}
-            <div className="flex justify-center mt-8 space-x-3">
-              {testimonies.map((_, index) => (
-                <motion.button
-                  key={index}
-                  onClick={() => setCurrentTestimony(index)}
-                  className={`w-4 h-4 rounded-full transition-all duration-300 ${
-                    index === currentTestimony
-                      ? 'bg-white scale-125 shadow-lg'
-                      : 'bg-white/50 hover:bg-white/70'
-                  }`}
-                  whileHover={{ scale: 1.2 }}
-                  whileTap={{ scale: 0.9 }}
-                  aria-label={`View testimony ${index + 1}`}
-                />
+                </div>
               ))}
-            </div>
+            </motion.div>
           </div>
+
         </motion.div>
 
         {/* Call to Action */}
@@ -322,16 +300,6 @@ export default function ImpactSection() {
           className="text-center mt-16"
           variants={itemVariants}
         >
-          <div className="inline-flex items-center justify-center w-16 h-16 bg-white/20 backdrop-blur-sm rounded-full mb-6 shadow-lg border border-white/30">
-            <HeartIcon className="h-8 w-8 text-white" />
-          </div>
-          <h3 className="heading-3 mb-4 text-white font-bold">
-            Be Part of the <span className="text-white font-bold">Story</span>
-          </h3>
-          <p className="body-large mb-8 max-w-2xl mx-auto text-white font-semibold">
-            Your support helps us continue reaching the lost, caring for orphans, 
-            and training the next generation of kingdom leaders.
-          </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <motion.a
               href="/give"
@@ -344,13 +312,13 @@ export default function ImpactSection() {
               Support Our Mission
             </motion.a>
             <motion.a
-              href="/get-involved/volunteer"
+              href="/get-involved"
               className="inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-black bg-white border-2 border-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 group"
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
             >
               <UserGroupIcon className="h-5 w-5 mr-2 group-hover:animate-bounce" />
-              Volunteer With Us
+              Get Involved
             </motion.a>
           </div>
         </motion.div>

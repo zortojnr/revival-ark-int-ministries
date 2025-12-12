@@ -69,7 +69,7 @@ export default function Header() {
             <Link href="/" className="flex items-center space-x-3">
               <div className="w-12 h-12 relative">
                 <Image
-                  src="/images/logo.jpg"
+                  src="/images/rev1.jpg"
                   alt="Revival Ark International Logo"
                   width={48}
                   height={48}
