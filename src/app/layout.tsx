@@ -37,9 +37,9 @@ export const metadata: Metadata = {
   keywords: "Revival Ark, International Ministries, Christian Ministry, Gospel, Nigeria, Jos, Pastor Haruna Aaron Gassy, Revival Crusades, Youth Ministry, Orphanage, Bible School",
   authors: [{ name: "Revival Ark International Ministries" }],
   icons: {
-    icon: "/images/logo.jpg",
-    shortcut: "/images/logo.jpg",
-    apple: "/images/logo.jpg",
+    icon: "/images/rev1.jpg",
+    shortcut: "/images/rev1.jpg",
+    apple: "/images/rev1.jpg",
   },
   openGraph: {
     title: "Revival Ark International Ministries",
