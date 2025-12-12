@@ -98,7 +98,7 @@ export default function WhoWeArePage() {
                     src="/images/rev1.jpg"
                     alt="Revival Ark International Logo"
                     fill
-                    className="object-contain rounded-full shadow-2xl"
+                    className="object-contain rounded-2xl shadow-2xl"
                     priority
                   />
                 </div>
