@@ -96,28 +96,20 @@ export default function GetInvolvedPage() {
       </section>
 
       {/* Community Image Section */}
-      <section className="py-16 md:py-24 bg-primary-900 text-white relative overflow-hidden">
-        <div className="absolute inset-0 opacity-20">
-             <Image
-                src="/images/2.jpg"
-                alt="Community Background"
-                fill
-                className="object-cover"
-              />
-        </div>
+      <section className="py-16 md:py-24 bg-white text-secondary-900 relative overflow-hidden border-t border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">Building Kingdom Communities</h2>
-              <p className="text-lg text-primary-100 mb-6 leading-relaxed">
+              <h2 className="text-3xl md:text-4xl font-bold mb-6 text-secondary-900">Building Kingdom Communities</h2>
+              <p className="text-lg text-secondary-700 mb-6 leading-relaxed">
                 When you get involved, you become part of a family that is passionate about Jesus and people. We grow together, serve together, and rejoice together in what God is doing.
               </p>
-              <p className="text-lg text-primary-100 mb-8 leading-relaxed">
+              <p className="text-lg text-secondary-700 mb-8 leading-relaxed font-medium italic">
                 "Two are better than one, because they have a good return for their labor." - Ecclesiastes 4:9
               </p>
               <Link
                 href="/ministries/revival-crusades"
-                className="inline-flex items-center px-8 py-3 bg-secondary-900 text-white font-bold rounded-lg hover:bg-secondary-800 transition-colors shadow-lg"
+                className="inline-flex items-center px-8 py-3 bg-white text-secondary-900 font-bold rounded-lg border-2 border-secondary-900 hover:bg-secondary-50 transition-colors shadow-lg"
               >
                 See Upcoming Events
               </Link>
@@ -143,7 +135,7 @@ export default function GetInvolvedPage() {
           </p>
           <Link
             href="/contact"
-            className="inline-flex items-center px-8 py-4 bg-secondary-900 text-white font-bold rounded-full hover:bg-secondary-800 transition-colors shadow-lg"
+            className="inline-flex items-center px-8 py-4 bg-white text-secondary-900 border-2 border-secondary-900 font-bold rounded-full hover:bg-secondary-50 transition-colors shadow-lg"
           >
             <EnvelopeIcon className="w-5 h-5 mr-2" />
             Contact Us Today

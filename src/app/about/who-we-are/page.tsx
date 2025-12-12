@@ -74,15 +74,24 @@ export default function WhoWeArePage() {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="relative py-20 lg:py-32 bg-gradient-to-br from-primary-600 via-primary-700 to-secondary-800 text-white overflow-hidden">
-        <div className="absolute inset-0 bg-black/30"></div>
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative py-20 lg:py-32 text-white overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/images/about/hero.jpg"
+            alt="Who We Are Hero Background"
+            fill
+            className="object-cover"
+            priority
+          />
+          <div className="absolute inset-0 bg-black/70"></div>
+        </div>
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <h1 className="text-4xl lg:text-6xl font-bold mb-6">
                 Who We Are
               </h1>
-              <p className="text-xl lg:text-2xl text-primary-100 leading-relaxed font-serif italic mb-8">
+              <p className="text-xl lg:text-2xl text-gray-200 leading-relaxed font-serif italic mb-8">
                 "And he said unto them, Go ye into all the world, and preach the gospel to every creature." 
                 - Mark 16:15
               </p>
@@ -91,17 +100,15 @@ export default function WhoWeArePage() {
                 and instruments of His revival in this generation.
               </p>
             </div>
-            <div className="relative">
-              <div className="aspect-square bg-white/10 rounded-2xl backdrop-blur-sm border border-white/20 flex items-center justify-center p-8">
-                <div className="relative w-full h-full">
-                  <Image
-                    src="/images/rev1.jpg"
-                    alt="Revival Ark International Logo"
-                    fill
-                    className="object-contain rounded-2xl shadow-2xl"
-                    priority
-                  />
-                </div>
+            <div className="flex justify-center lg:justify-end">
+              <div className="relative w-64 h-64 md:w-80 md:h-80">
+                <Image
+                  src="/images/rev1.jpg"
+                  alt="Revival Ark International Logo"
+                  fill
+                  className="object-contain rounded-2xl shadow-2xl"
+                  priority
+                />
               </div>
             </div>
           </div>
