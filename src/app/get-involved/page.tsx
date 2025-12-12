@@ -5,7 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import Layout from '@/components/layout/Layout';
 import { motion } from 'framer-motion';
-import { HandRaisedIcon, HeartIcon, GlobeAltIcon, UserGroupIcon, EnvelopeIcon } from '@heroicons/react/24/outline';
+import { HandRaisedIcon, HeartIcon, GlobeAltIcon, EnvelopeIcon } from '@heroicons/react/24/outline';
 
 export default function GetInvolvedPage() {
   return (

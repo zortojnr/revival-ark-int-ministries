@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, useInView, useAnimation, easeOut } from 'framer-motion';
-import { HeartIcon, GlobeAltIcon, AcademicCapIcon, UserGroupIcon, SparklesIcon, StarIcon, ChatBubbleLeftRightIcon } from '@heroicons/react/24/outline';
+import { HeartIcon, AcademicCapIcon, UserGroupIcon, SparklesIcon, StarIcon, ChatBubbleLeftRightIcon } from '@heroicons/react/24/outline';
 
 interface ImpactStat {
   id: number;
@@ -186,7 +186,7 @@ export default function ImpactSection() {
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-20"
           variants={containerVariants}
         >
-          {impactStats.map((stat, index) => {
+          {impactStats.map((stat) => {
             const IconComponent = stat.icon;
             const animatedValue = animatedStats[stat.id] || 0;
             

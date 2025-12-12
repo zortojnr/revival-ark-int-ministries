@@ -4,7 +4,7 @@ import React from 'react';
 import Image from 'next/image';
 import Layout from '@/components/layout/Layout';
 import { motion } from 'framer-motion';
-import { HandRaisedIcon, SparklesIcon, FireIcon } from '@heroicons/react/24/outline';
+import { HandRaisedIcon, FireIcon } from '@heroicons/react/24/outline';
 
 export default function PrayerMinistryPage() {
   return (

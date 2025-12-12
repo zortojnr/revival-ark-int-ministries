@@ -4,7 +4,7 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { motion, easeOut } from 'framer-motion';
-import { CalendarIcon, PlayIcon, BookOpenIcon, ArrowRightIcon, SparklesIcon } from '@heroicons/react/24/outline';
+import { PlayIcon, ArrowRightIcon, SparklesIcon } from '@heroicons/react/24/outline';
 
 interface Sermon {
   id: number;
@@ -89,15 +89,6 @@ export default function HighlightsSection() {
       day: 'numeric',
       year: 'numeric'
     });
-  };
-
-  const getCategoryColor = (category: string) => {
-    switch (category) {
-      case 'Conference': return 'bg-primary-50 text-primary-700 border border-primary-200';
-      case 'Youth': return 'bg-accent-50 text-accent-700 border border-accent-200';
-      case 'Outreach': return 'bg-secondary-50 text-secondary-700 border border-secondary-200';
-      default: return 'bg-neutral-50 text-neutral-700 border border-neutral-200';
-    }
   };
 
   return (
@@ -190,7 +181,7 @@ export default function HighlightsSection() {
             </motion.div>
 
             <motion.div className="space-y-6" variants={containerVariants}>
-              {recentSermons.map((sermon, index) => (
+              {recentSermons.map((sermon) => (
                 <motion.div
                   key={sermon.id}
                   variants={itemVariants}

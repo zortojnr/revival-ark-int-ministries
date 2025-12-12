@@ -1,6 +1,5 @@
 import Layout from '@/components/layout/Layout';
 import Link from 'next/link';
-import Image from 'next/image';
 import { 
   ArrowRightIcon, 
   HeartIcon, 
@@ -11,8 +10,7 @@ import {
   HandRaisedIcon,
   ShieldCheckIcon,
   AcademicCapIcon,
-  SparklesIcon,
-  CheckCircleIcon
+  SparklesIcon
 } from '@heroicons/react/24/outline';
 
 export default function AboutPage() {

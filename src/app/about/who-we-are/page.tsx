@@ -1,6 +1,6 @@
 import Layout from '@/components/layout/Layout';
-import Image from 'next/image';
 import Link from 'next/link';
+import Image from 'next/image';
 import { 
   HeartIcon, 
   GlobeAltIcon, 
@@ -92,8 +92,16 @@ export default function WhoWeArePage() {
               </p>
             </div>
             <div className="relative">
-              <div className="aspect-square bg-white/10 rounded-2xl backdrop-blur-sm border border-white/20 flex items-center justify-center">
-                <SparklesIcon className="h-32 w-32 text-white/60" />
+              <div className="aspect-square bg-white/10 rounded-2xl backdrop-blur-sm border border-white/20 flex items-center justify-center p-8">
+                <div className="relative w-full h-full">
+                  <Image
+                    src="/images/rev1.jpg"
+                    alt="Revival Ark International Logo"
+                    fill
+                    className="object-contain rounded-full shadow-2xl"
+                    priority
+                  />
+                </div>
               </div>
             </div>
           </div>

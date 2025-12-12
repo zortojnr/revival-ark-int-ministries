@@ -150,7 +150,7 @@ export default function CookieConsent() {
         
         const fbq: any = function(...args: any[]) {
           if (fbq.callMethod) {
-            fbq.callMethod.apply(fbq, args);
+            fbq.callMethod(...args);
           } else {
             fbq.queue.push(args);
           }
@@ -204,15 +204,6 @@ export default function CookieConsent() {
     
     // Other functional tools can be added here
     console.log('Functional tools initialized');
-  };
-
-  const handlePreferenceChange = (type: keyof CookiePreferences, value: boolean) => {
-    if (type === 'necessary') return; // Cannot disable necessary cookies
-    
-    setPreferences(prev => ({
-      ...prev,
-      [type]: value,
-    }));
   };
 
   if (!showBanner) {

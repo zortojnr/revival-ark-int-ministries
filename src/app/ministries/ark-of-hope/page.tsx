@@ -5,7 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import Layout from '@/components/layout/Layout';
 import { motion } from 'framer-motion';
-import { HeartIcon, HandRaisedIcon, HomeIcon, GiftIcon, ArrowRightIcon } from '@heroicons/react/24/outline';
+import { HeartIcon, HandRaisedIcon, HomeIcon, GiftIcon } from '@heroicons/react/24/outline';
 
 export default function ArkOfHopePage() {
   return (

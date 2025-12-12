@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { useSearchParams } from 'next/navigation';
+import Link from 'next/link';
 import Layout from '@/components/layout/Layout';
 import { MagnifyingGlassIcon } from '@heroicons/react/24/outline';
 
@@ -147,12 +148,12 @@ export default function SearchPage() {
               <p className="text-lg text-secondary-600 mb-6">
                 Please enter a search term to find content on our website.
               </p>
-              <a
+              <Link
                 href="/"
                 className="btn-primary"
               >
                 Return to Home
-              </a>
+              </Link>
             </div>
           )}
 
@@ -171,24 +172,24 @@ export default function SearchPage() {
                     No results found for "{query}". Try different keywords or browse our main sections.
                   </p>
                   <div className="flex flex-col sm:flex-row gap-6 justify-center">
-                    <a
+                    <Link
                       href="/about"
                       className="btn-primary"
                     >
                       About Us
-                    </a>
-                    <a
+                    </Link>
+                    <Link
                       href="/ministries"
                       className="btn-secondary"
                     >
                       Ministries
-                    </a>
-                    <a
+                    </Link>
+                    <Link
                       href="/resources"
                       className="btn-accent"
                     >
                       Resources
-                    </a>
+                    </Link>
                   </div>
                 </div>
               ) : (
@@ -201,7 +202,7 @@ export default function SearchPage() {
                             {result.type === 'ministry' ? 'Ministry' : 'Page'}
                           </span>
                           <h3 className="font-heading text-xl font-bold text-secondary-900 hover:text-primary-600 transition-colors">
-                            <a href={result.url}>{result.title}</a>
+                            <Link href={result.url}>{result.title}</Link>
                           </h3>
                         </div>
                       </div>
@@ -216,12 +217,12 @@ export default function SearchPage() {
                             </span>
                           ))}
                         </div>
-                        <a
+                        <Link
                           href={result.url}
                           className="inline-flex items-center font-body text-primary-600 hover:text-primary-700 font-semibold transition-colors"
                         >
                           View Page →
-                        </a>
+                        </Link>
                       </div>
                     </div>
                   ))}

@@ -4,7 +4,7 @@ import React from 'react';
 import Image from 'next/image';
 import Layout from '@/components/layout/Layout';
 import { motion } from 'framer-motion';
-import { GlobeAltIcon, UserGroupIcon, MegaphoneIcon } from '@heroicons/react/24/outline';
+import { GlobeAltIcon, MegaphoneIcon } from '@heroicons/react/24/outline';
 
 export default function EvangelismMissionsPage() {
   return (

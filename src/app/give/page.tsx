@@ -110,7 +110,7 @@ export default function GivePage() {
         }),
       });
 
-      const { clientSecret } = await response.json();
+      await response.json();
 
       // Redirect to Stripe Checkout or handle payment
       const stripe = await stripePromise;
