@@ -179,14 +179,14 @@ export default function LeadershipPage() {
                 <div className="flex justify-center space-x-4">
                   <a
                     href={`mailto:${leader.email}`}
-                    className="inline-flex items-center px-6 py-3 bg-primary-600 hover:bg-primary-700 text-white rounded-lg transition-colors font-medium shadow-md"
+                    className="inline-flex items-center px-6 py-3 bg-primary-700 hover:bg-primary-800 text-white rounded-lg transition-colors font-medium shadow-md"
                   >
                     <EnvelopeIcon className="h-5 w-5 mr-2" />
                     Email
                   </a>
                   <a
                     href={`tel:${leader.phone}`}
-                    className="inline-flex items-center px-6 py-3 bg-secondary-600 hover:bg-secondary-700 text-white rounded-lg transition-colors font-medium shadow-md"
+                    className="inline-flex items-center px-6 py-3 bg-secondary-700 hover:bg-secondary-800 text-white rounded-lg transition-colors font-medium shadow-md"
                   >
                     <PhoneIcon className="h-5 w-5 mr-2" />
                     Call
@@ -299,7 +299,7 @@ export default function LeadershipPage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/contact"
-              className="inline-flex items-center px-8 py-4 bg-primary-600 hover:bg-primary-700 text-white font-semibold rounded-lg transition-colors transform hover:scale-105"
+              className="inline-flex items-center px-8 py-4 bg-primary-700 hover:bg-primary-800 text-white font-semibold rounded-lg transition-colors transform hover:scale-105"
             >
               Contact Leadership
             </Link>

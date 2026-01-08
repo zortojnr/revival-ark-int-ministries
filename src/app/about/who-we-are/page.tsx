@@ -263,7 +263,7 @@ export default function WhoWeArePage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/about/leadership"
-              className="inline-flex items-center px-8 py-4 bg-primary-600 hover:bg-primary-700 text-white font-semibold rounded-lg transition-colors transform hover:scale-105"
+              className="inline-flex items-center px-8 py-4 bg-primary-700 hover:bg-primary-800 text-white font-semibold rounded-lg transition-colors transform hover:scale-105"
             >
               Meet Our Leadership
               <ArrowRightIcon className="ml-2 h-4 w-4" />

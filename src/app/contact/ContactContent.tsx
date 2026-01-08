@@ -151,7 +151,7 @@ function ContactForm() {
           className={`w-full py-3 px-6 text-white font-bold rounded-lg shadow-md transition-all transform hover:scale-[1.02] ${
             isSubmitting 
               ? 'bg-gray-400 cursor-not-allowed' 
-              : 'bg-primary-600 hover:bg-primary-700 hover:shadow-lg'
+              : 'bg-primary-700 hover:bg-primary-800 hover:shadow-lg'
           }`}
         >
           {isSubmitting ? 'Sending...' : 'Send Message'}

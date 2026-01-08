@@ -28,7 +28,7 @@ export default function UnderConstruction() {
         
         <Link 
           href="/"
-          className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-primary-600 hover:bg-primary-700 transition-colors"
+          className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-primary-700 hover:bg-primary-800 transition-colors"
         >
           <ArrowLeftIcon className="h-5 w-5 mr-2" />
           Return Home

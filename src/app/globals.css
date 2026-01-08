@@ -327,23 +327,23 @@ body {
 }
 
 .btn-primary {
-  background: var(--primary-500);
+  background: var(--primary-700);
   color: white;
 }
 
 .btn-primary:hover:not(:disabled) {
-  background: var(--primary-600);
+  background: var(--primary-800);
   transform: translateY(-1px);
   box-shadow: var(--shadow-md);
 }
 
 .btn-secondary {
-  background: var(--secondary-600);
+  background: var(--secondary-700);
   color: white;
 }
 
 .btn-secondary:hover:not(:disabled) {
-  background: var(--secondary-700);
+  background: var(--secondary-800);
   transform: translateY(-1px);
   box-shadow: var(--shadow-md);
 }
