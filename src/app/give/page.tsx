@@ -5,8 +5,10 @@ import { loadStripe } from '@stripe/stripe-js';
 import Layout from '@/components/layout/Layout';
 import { HeartIcon, BanknotesIcon, GiftIcon, HandRaisedIcon } from '@heroicons/react/24/outline';
 
-// Initialize Stripe (replace with your publishable key)
-const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY || '');
+// Initialize Stripe (safely)
+const stripePromise = process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY 
+  ? loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY) 
+  : null;
 
 interface DonationOption {
   id: string;
@@ -113,6 +115,10 @@ export default function GivePage() {
       await response.json();
 
       // Redirect to Stripe Checkout or handle payment
+      if (!stripePromise) {
+        throw new Error('Stripe is not configured. Please contact support.');
+      }
+      
       const stripe = await stripePromise;
       if (!stripe) throw new Error('Stripe failed to initialize');
 

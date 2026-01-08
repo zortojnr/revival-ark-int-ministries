@@ -14,16 +14,16 @@ const footerNavigation = {
   about: [
     { name: 'Who We Are', href: '/about/who-we-are' },
     { name: 'Leadership', href: '/about/leadership' },
-    { name: 'Doctrinal Beliefs', href: '/about/beliefs' },
+    { name: 'About Us', href: '/about' },
     { name: 'Vision & Mission', href: '/about/vision-mission' },
   ],
   ministries: [
     { name: 'Revival Crusades', href: '/ministries/revival-crusades' },
-    { name: 'Youth Network', href: '/ministries/youth-network' },
-    { name: 'Ark Kids', href: '/ministries/ark-kids' },
+    { name: 'Youth Network', href: '/ministries/youth-ministry' },
+    { name: 'Children\'s Ministry', href: '/ministries/children-ministry' },
     { name: 'Ark of Hope', href: '/ministries/ark-of-hope' },
-    { name: 'Women\'s Ministry', href: '/ministries/womens-ministry' },
-    { name: 'Missions', href: '/ministries/missions' },
+    { name: 'Prayer', href: '/ministries/prayer' },
+    { name: 'Missions', href: '/ministries/evangelism-missions' },
   ],
   resources: [
     { name: 'Sermons', href: 'https://www.youtube.com/@AaronGassy' },
@@ -32,10 +32,9 @@ const footerNavigation = {
     { name: 'Creative Media', href: '/resources/media' },
   ],
   getInvolved: [
-    { name: 'Volunteer', href: '/get-involved/volunteer' },
-    { name: 'Prayer Partner', href: '/get-involved/prayer-partner' },
-    { name: 'Mission Trips', href: '/get-involved/mission-trips' },
-    { name: 'Testimonies', href: '/get-involved/testimonies' },
+    { name: 'Get Involved', href: '/get-involved' },
+    { name: 'Give', href: '/give' },
+    { name: 'Contact Us', href: '/contact' },
   ],
 };
 
