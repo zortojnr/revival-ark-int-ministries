@@ -257,7 +257,7 @@ export default function CookieConsent() {
                 variant="primary"
                 size="sm"
                 onClick={handleAcceptAll}
-                className="w-full sm:w-auto"
+                className="w-full sm:w-auto text-black font-bold"
               >
                 Accept All
               </Button>
@@ -400,7 +400,7 @@ export default function CookieConsent() {
                 <Button
                   variant="primary"
                   onClick={handleAcceptAll}
-                  className="w-full sm:w-auto"
+                  className="w-full sm:w-auto text-black font-bold"
                 >
                   Accept All
                 </Button>

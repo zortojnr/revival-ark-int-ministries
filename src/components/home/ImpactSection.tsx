@@ -201,20 +201,22 @@ export default function ImpactSection() {
                 }}
               >
                 <div className="relative mb-6">
-                  <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-primary-500 to-primary-600 text-white rounded-2xl shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:from-primary-600 group-hover:to-primary-700 border border-primary-400/20">
+                  {/* Icon Card - Solid Color for Visibility */}
+                  <div className="inline-flex items-center justify-center w-20 h-20 bg-primary-600 text-white rounded-2xl shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:bg-primary-700 border-2 border-primary-700">
                     <IconComponent className="h-10 w-10" />
                   </div>
-                  <div className="absolute -top-2 -right-2 w-6 h-6 bg-secondary-600 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-md">
+                  <div className="absolute -top-2 -right-2 w-6 h-6 bg-secondary-900 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-md">
                     <StarIcon className="h-3 w-3 text-white" />
                   </div>
                 </div>
-                <div className="text-4xl lg:text-5xl font-bold text-secondary-900 mb-2">
+                {/* Stats and Text - Enhanced Visibility */}
+                <div className="text-4xl lg:text-5xl font-black text-secondary-900 mb-2 drop-shadow-sm">
                   {formatNumber(animatedValue)}{stat.suffix}
                 </div>
-                <div className="text-lg font-bold text-primary-700 mb-3">
+                <div className="text-xl font-bold text-primary-800 mb-3">
                   {stat.label}
                 </div>
-                <p className="body-small px-2 text-gray-800 font-medium">
+                <p className="body-base px-2 text-secondary-900 font-semibold">
                   {stat.description}
                 </p>
               </motion.div>
