@@ -208,13 +208,13 @@ export default function ImpactSection() {
                     <StarIcon className="h-3 w-3 text-white" />
                   </div>
                 </div>
-                <div className="text-4xl lg:text-5xl font-bold bg-gradient-to-r from-secondary-900 to-primary-700 bg-clip-text text-transparent mb-2">
+                <div className="text-4xl lg:text-5xl font-bold text-secondary-900 mb-2">
                   {formatNumber(animatedValue)}{stat.suffix}
                 </div>
-                <div className="text-lg font-semibold text-primary-600 mb-3">
+                <div className="text-lg font-bold text-primary-700 mb-3">
                   {stat.label}
                 </div>
-                <p className="body-small px-2">
+                <p className="body-small px-2 text-gray-800 font-medium">
                   {stat.description}
                 </p>
               </motion.div>
@@ -225,7 +225,7 @@ export default function ImpactSection() {
         {/* Testimonies Section (Marquee) */}
         <motion.div 
           className="rounded-3xl p-8 lg:p-12 shadow-2xl border border-white/30 relative overflow-hidden"
-          style={{ backgroundColor: '#50C878' }}
+          style={{ backgroundColor: '#16a34a' }} // Stronger green for better visibility
           variants={itemVariants}
         >
           {/* Decorative elements */}
@@ -304,7 +304,7 @@ export default function ImpactSection() {
             <motion.a
               href="/give"
               className="inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 group"
-              style={{ backgroundColor: '#50C878' }}
+              style={{ backgroundColor: '#16a34a' }} // Stronger green for better visibility
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -313,7 +313,7 @@ export default function ImpactSection() {
             </motion.a>
             <motion.a
               href="/get-involved"
-              className="inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-black bg-white border-2 border-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 group"
+              className="inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-secondary-900 bg-white border-2 border-secondary-200 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 group"
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
             >

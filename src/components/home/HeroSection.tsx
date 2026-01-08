@@ -89,7 +89,7 @@ export default function HeroSection() {
             </Link>
             <Link
               href="/give"
-              className="px-8 py-4 bg-white/10 hover:bg-white/20 text-white font-semibold rounded-lg backdrop-blur-sm border border-white/20 transition-all duration-300 w-full sm:w-auto"
+              className="px-8 py-4 bg-white text-secondary-900 hover:bg-gray-100 font-bold rounded-lg transition-all duration-300 w-full sm:w-auto shadow-lg"
             >
               Give Online
             </Link>

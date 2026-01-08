@@ -240,40 +240,6 @@ export default function LeadershipPage() {
         </div>
       </section>
 
-      {/* Board of Directors */}
-      <section className="py-16 lg:py-24 bg-primary-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-secondary-900 mb-4">
-              Board of Directors
-            </h2>
-            <div className="w-24 h-1 bg-primary-500 mx-auto mb-6"></div>
-            <p className="text-lg text-secondary-600 max-w-2xl mx-auto">
-              Our board provides governance, accountability, and strategic guidance for the ministry.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {boardMembers.map((member, index) => (
-              <div key={index} className="bg-primary-50 rounded-xl p-6 text-center border border-primary-200">
-                <div className="w-16 h-16 bg-primary-500 rounded-full mx-auto mb-4 flex items-center justify-center">
-                  <UserGroupIcon className="h-8 w-8 text-white" />
-                </div>
-                <h3 className="text-lg font-bold text-secondary-900 mb-2">
-                  {member.name}
-                </h3>
-                <p className="text-primary-700 font-semibold mb-1">
-                  {member.title}
-                </p>
-                <p className="text-sm text-secondary-600">
-                  {member.profession}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Leadership Principles */}
       <section className="py-16 lg:py-24 bg-gradient-to-r from-primary-600 to-primary-700 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
