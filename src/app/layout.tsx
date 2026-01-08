@@ -30,10 +30,14 @@ const poppins = Poppins({
   weight: ["300", "400", "500", "600", "700", "800", "900"],
 });
 
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+};
+
 export const metadata: Metadata = {
   title: "Revival Ark International Ministries",
   description: "An Ark of Revival to the Nations - Bringing hope, healing, and transformation through the power of God's love and the Gospel of Jesus Christ.",
-  viewport: "width=device-width, initial-scale=1",
   keywords: "Revival Ark, International Ministries, Christian Ministry, Gospel, Nigeria, Jos, Pastor Haruna Aaron Gassy, Revival Crusades, Youth Ministry, Orphanage, Bible School",
   authors: [{ name: "Revival Ark International Ministries" }],
   icons: {

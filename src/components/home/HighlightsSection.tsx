@@ -103,12 +103,12 @@ export default function HighlightsSection() {
       <div className="container relative z-content">
         {/* Vision Scriptures */}
         <motion.div 
-          className="text-center mb-20"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          variants={containerVariants}
-        >
+            className="text-center mb-20"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={containerVariants}
+          >
           <motion.div variants={itemVariants} className="mb-12">
             <span className="badge badge-secondary mb-6">
               <SparklesIcon className="w-5 h-5 mr-2 text-primary-600" />
