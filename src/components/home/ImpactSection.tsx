@@ -202,11 +202,11 @@ export default function ImpactSection() {
               >
                 <div className="relative mb-6">
                   {/* Icon Card - Solid Color for Visibility */}
-                  <div className="inline-flex items-center justify-center w-20 h-20 bg-primary-600 text-white rounded-2xl shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:bg-primary-700 border-2 border-primary-700">
+                  <div className="inline-flex items-center justify-center w-20 h-20 bg-primary-600 text-white rounded-2xl shadow-xl shadow-primary-200/50 group-hover:shadow-2xl transition-all duration-300 group-hover:bg-primary-700 border-4 border-white ring-2 ring-primary-100">
                     <IconComponent className="h-10 w-10" />
                   </div>
-                  <div className="absolute -top-2 -right-2 w-6 h-6 bg-secondary-900 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-md">
-                    <StarIcon className="h-3 w-3 text-white" />
+                  <div className="absolute -top-2 -right-2 w-8 h-8 bg-secondary-900 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-lg border-2 border-white">
+                    <StarIcon className="h-4 w-4 text-white" />
                   </div>
                 </div>
                 {/* Stats and Text - Enhanced Visibility */}
